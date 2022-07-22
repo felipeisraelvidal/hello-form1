@@ -10,12 +10,12 @@
 		559DD7A1288AD80500A63F57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7A0288AD80500A63F57 /* AppDelegate.swift */; };
 		559DD7A3288AD80500A63F57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7A2288AD80500A63F57 /* SceneDelegate.swift */; };
 		559DD7A5288AD80500A63F57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7A4288AD80500A63F57 /* ViewController.swift */; };
-		559DD7A8288AD80500A63F57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559DD7A6288AD80500A63F57 /* Main.storyboard */; };
 		559DD7AA288AD80700A63F57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 559DD7A9288AD80700A63F57 /* Assets.xcassets */; };
 		559DD7AD288AD80700A63F57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559DD7AB288AD80700A63F57 /* LaunchScreen.storyboard */; };
 		559DD7B8288AD80700A63F57 /* HelloFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7B7288AD80700A63F57 /* HelloFormTests.swift */; };
 		559DD7C2288AD80700A63F57 /* HelloFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7C1288AD80700A63F57 /* HelloFormUITests.swift */; };
 		559DD7C4288AD80700A63F57 /* HelloFormUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7C3288AD80700A63F57 /* HelloFormUITestsLaunchTests.swift */; };
+		559DD7D3288ADA9E00A63F57 /* Form in Frameworks */ = {isa = PBXBuildFile; productRef = 559DD7D2288ADA9E00A63F57 /* Form */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +40,6 @@
 		559DD7A0288AD80500A63F57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		559DD7A2288AD80500A63F57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		559DD7A4288AD80500A63F57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		559DD7A7288AD80500A63F57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		559DD7A9288AD80700A63F57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		559DD7AC288AD80700A63F57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		559DD7AE288AD80700A63F57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		559DD7BD288AD80700A63F57 /* HelloFormUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloFormUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		559DD7C1288AD80700A63F57 /* HelloFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloFormUITests.swift; sourceTree = "<group>"; };
 		559DD7C3288AD80700A63F57 /* HelloFormUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloFormUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		559DD7D0288AD9FC00A63F57 /* Modules */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Modules; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559DD7D3288ADA9E00A63F57 /* Form in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +80,12 @@
 		559DD794288AD80500A63F57 = {
 			isa = PBXGroup;
 			children = (
+				559DD7D0288AD9FC00A63F57 /* Modules */,
 				559DD79F288AD80500A63F57 /* HelloForm */,
 				559DD7B6288AD80700A63F57 /* HelloFormTests */,
 				559DD7C0288AD80700A63F57 /* HelloFormUITests */,
 				559DD79E288AD80500A63F57 /* Products */,
+				559DD7D1288ADA9E00A63F57 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,7 +105,6 @@
 				559DD7A0288AD80500A63F57 /* AppDelegate.swift */,
 				559DD7A2288AD80500A63F57 /* SceneDelegate.swift */,
 				559DD7A4288AD80500A63F57 /* ViewController.swift */,
-				559DD7A6288AD80500A63F57 /* Main.storyboard */,
 				559DD7A9288AD80700A63F57 /* Assets.xcassets */,
 				559DD7AB288AD80700A63F57 /* LaunchScreen.storyboard */,
 				559DD7AE288AD80700A63F57 /* Info.plist */,
@@ -127,6 +129,13 @@
 			path = HelloFormUITests;
 			sourceTree = "<group>";
 		};
+		559DD7D1288ADA9E00A63F57 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +152,9 @@
 			dependencies = (
 			);
 			name = HelloForm;
+			packageProductDependencies = (
+				559DD7D2288ADA9E00A63F57 /* Form */,
+			);
 			productName = HelloForm;
 			productReference = 559DD79D288AD80500A63F57 /* HelloForm.app */;
 			productType = "com.apple.product-type.application";
@@ -233,7 +245,6 @@
 			files = (
 				559DD7AD288AD80700A63F57 /* LaunchScreen.storyboard in Resources */,
 				559DD7AA288AD80700A63F57 /* Assets.xcassets in Resources */,
-				559DD7A8288AD80500A63F57 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +308,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		559DD7A6288AD80500A63F57 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				559DD7A7288AD80500A63F57 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		559DD7AB288AD80700A63F57 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +445,6 @@
 				INFOPLIST_FILE = HelloForm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -470,7 +472,6 @@
 				INFOPLIST_FILE = HelloForm/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -602,6 +603,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		559DD7D2288ADA9E00A63F57 /* Form */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Form;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 559DD795288AD80500A63F57 /* Project object */;
 }
