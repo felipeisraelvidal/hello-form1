@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		559DD7A1288AD80500A63F57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7A0288AD80500A63F57 /* AppDelegate.swift */; };
+		559DD7A3288AD80500A63F57 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7A2288AD80500A63F57 /* SceneDelegate.swift */; };
+		559DD7A5288AD80500A63F57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7A4288AD80500A63F57 /* ViewController.swift */; };
+		559DD7A8288AD80500A63F57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559DD7A6288AD80500A63F57 /* Main.storyboard */; };
+		559DD7AA288AD80700A63F57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 559DD7A9288AD80700A63F57 /* Assets.xcassets */; };
+		559DD7AD288AD80700A63F57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559DD7AB288AD80700A63F57 /* LaunchScreen.storyboard */; };
+		559DD7B8288AD80700A63F57 /* HelloFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7B7288AD80700A63F57 /* HelloFormTests.swift */; };
+		559DD7C2288AD80700A63F57 /* HelloFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7C1288AD80700A63F57 /* HelloFormUITests.swift */; };
+		559DD7C4288AD80700A63F57 /* HelloFormUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559DD7C3288AD80700A63F57 /* HelloFormUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		559DD7B4288AD80700A63F57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 559DD795288AD80500A63F57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 559DD79C288AD80500A63F57;
+			remoteInfo = HelloForm;
+		};
+		559DD7BE288AD80700A63F57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 559DD795288AD80500A63F57 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 559DD79C288AD80500A63F57;
+			remoteInfo = HelloForm;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		559DD79D288AD80500A63F57 /* HelloForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HelloForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		559DD7A0288AD80500A63F57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		559DD7A2288AD80500A63F57 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		559DD7A4288AD80500A63F57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		559DD7A7288AD80500A63F57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		559DD7A9288AD80700A63F57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		559DD7AC288AD80700A63F57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		559DD7AE288AD80700A63F57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		559DD7B3288AD80700A63F57 /* HelloFormTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloFormTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		559DD7B7288AD80700A63F57 /* HelloFormTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloFormTests.swift; sourceTree = "<group>"; };
+		559DD7BD288AD80700A63F57 /* HelloFormUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HelloFormUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		559DD7C1288AD80700A63F57 /* HelloFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloFormUITests.swift; sourceTree = "<group>"; };
+		559DD7C3288AD80700A63F57 /* HelloFormUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloFormUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		559DD79A288AD80500A63F57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		559DD7B0288AD80700A63F57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		559DD7BA288AD80700A63F57 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		559DD794288AD80500A63F57 = {
+			isa = PBXGroup;
+			children = (
+				559DD79F288AD80500A63F57 /* HelloForm */,
+				559DD7B6288AD80700A63F57 /* HelloFormTests */,
+				559DD7C0288AD80700A63F57 /* HelloFormUITests */,
+				559DD79E288AD80500A63F57 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		559DD79E288AD80500A63F57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				559DD79D288AD80500A63F57 /* HelloForm.app */,
+				559DD7B3288AD80700A63F57 /* HelloFormTests.xctest */,
+				559DD7BD288AD80700A63F57 /* HelloFormUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		559DD79F288AD80500A63F57 /* HelloForm */ = {
+			isa = PBXGroup;
+			children = (
+				559DD7A0288AD80500A63F57 /* AppDelegate.swift */,
+				559DD7A2288AD80500A63F57 /* SceneDelegate.swift */,
+				559DD7A4288AD80500A63F57 /* ViewController.swift */,
+				559DD7A6288AD80500A63F57 /* Main.storyboard */,
+				559DD7A9288AD80700A63F57 /* Assets.xcassets */,
+				559DD7AB288AD80700A63F57 /* LaunchScreen.storyboard */,
+				559DD7AE288AD80700A63F57 /* Info.plist */,
+			);
+			path = HelloForm;
+			sourceTree = "<group>";
+		};
+		559DD7B6288AD80700A63F57 /* HelloFormTests */ = {
+			isa = PBXGroup;
+			children = (
+				559DD7B7288AD80700A63F57 /* HelloFormTests.swift */,
+			);
+			path = HelloFormTests;
+			sourceTree = "<group>";
+		};
+		559DD7C0288AD80700A63F57 /* HelloFormUITests */ = {
+			isa = PBXGroup;
+			children = (
+				559DD7C1288AD80700A63F57 /* HelloFormUITests.swift */,
+				559DD7C3288AD80700A63F57 /* HelloFormUITestsLaunchTests.swift */,
+			);
+			path = HelloFormUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		559DD79C288AD80500A63F57 /* HelloForm */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 559DD7C7288AD80700A63F57 /* Build configuration list for PBXNativeTarget "HelloForm" */;
+			buildPhases = (
+				559DD799288AD80500A63F57 /* Sources */,
+				559DD79A288AD80500A63F57 /* Frameworks */,
+				559DD79B288AD80500A63F57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HelloForm;
+			productName = HelloForm;
+			productReference = 559DD79D288AD80500A63F57 /* HelloForm.app */;
+			productType = "com.apple.product-type.application";
+		};
+		559DD7B2288AD80700A63F57 /* HelloFormTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 559DD7CA288AD80700A63F57 /* Build configuration list for PBXNativeTarget "HelloFormTests" */;
+			buildPhases = (
+				559DD7AF288AD80700A63F57 /* Sources */,
+				559DD7B0288AD80700A63F57 /* Frameworks */,
+				559DD7B1288AD80700A63F57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				559DD7B5288AD80700A63F57 /* PBXTargetDependency */,
+			);
+			name = HelloFormTests;
+			productName = HelloFormTests;
+			productReference = 559DD7B3288AD80700A63F57 /* HelloFormTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		559DD7BC288AD80700A63F57 /* HelloFormUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 559DD7CD288AD80700A63F57 /* Build configuration list for PBXNativeTarget "HelloFormUITests" */;
+			buildPhases = (
+				559DD7B9288AD80700A63F57 /* Sources */,
+				559DD7BA288AD80700A63F57 /* Frameworks */,
+				559DD7BB288AD80700A63F57 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				559DD7BF288AD80700A63F57 /* PBXTargetDependency */,
+			);
+			name = HelloFormUITests;
+			productName = HelloFormUITests;
+			productReference = 559DD7BD288AD80700A63F57 /* HelloFormUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		559DD795288AD80500A63F57 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					559DD79C288AD80500A63F57 = {
+						CreatedOnToolsVersion = 14.0;
+					};
+					559DD7B2288AD80700A63F57 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 559DD79C288AD80500A63F57;
+					};
+					559DD7BC288AD80700A63F57 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 559DD79C288AD80500A63F57;
+					};
+				};
+			};
+			buildConfigurationList = 559DD798288AD80500A63F57 /* Build configuration list for PBXProject "HelloForm" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 559DD794288AD80500A63F57;
+			productRefGroup = 559DD79E288AD80500A63F57 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				559DD79C288AD80500A63F57 /* HelloForm */,
+				559DD7B2288AD80700A63F57 /* HelloFormTests */,
+				559DD7BC288AD80700A63F57 /* HelloFormUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		559DD79B288AD80500A63F57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559DD7AD288AD80700A63F57 /* LaunchScreen.storyboard in Resources */,
+				559DD7AA288AD80700A63F57 /* Assets.xcassets in Resources */,
+				559DD7A8288AD80500A63F57 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		559DD7B1288AD80700A63F57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		559DD7BB288AD80700A63F57 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		559DD799288AD80500A63F57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559DD7A5288AD80500A63F57 /* ViewController.swift in Sources */,
+				559DD7A1288AD80500A63F57 /* AppDelegate.swift in Sources */,
+				559DD7A3288AD80500A63F57 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		559DD7AF288AD80700A63F57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559DD7B8288AD80700A63F57 /* HelloFormTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		559DD7B9288AD80700A63F57 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559DD7C2288AD80700A63F57 /* HelloFormUITests.swift in Sources */,
+				559DD7C4288AD80700A63F57 /* HelloFormUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		559DD7B5288AD80700A63F57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 559DD79C288AD80500A63F57 /* HelloForm */;
+			targetProxy = 559DD7B4288AD80700A63F57 /* PBXContainerItemProxy */;
+		};
+		559DD7BF288AD80700A63F57 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 559DD79C288AD80500A63F57 /* HelloForm */;
+			targetProxy = 559DD7BE288AD80700A63F57 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		559DD7A6288AD80500A63F57 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				559DD7A7288AD80500A63F57 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		559DD7AB288AD80700A63F57 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				559DD7AC288AD80700A63F57 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		559DD7C5288AD80700A63F57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		559DD7C6288AD80700A63F57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		559DD7C8288AD80700A63F57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YVUPDJXNRC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HelloForm/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FelipeVidal.HelloForm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		559DD7C9288AD80700A63F57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YVUPDJXNRC;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HelloForm/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FelipeVidal.HelloForm;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		559DD7CB288AD80700A63F57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YVUPDJXNRC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FelipeVidal.HelloFormTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloForm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HelloForm";
+			};
+			name = Debug;
+		};
+		559DD7CC288AD80700A63F57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YVUPDJXNRC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FelipeVidal.HelloFormTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HelloForm.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/HelloForm";
+			};
+			name = Release;
+		};
+		559DD7CE288AD80700A63F57 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YVUPDJXNRC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FelipeVidal.HelloFormUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HelloForm;
+			};
+			name = Debug;
+		};
+		559DD7CF288AD80700A63F57 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YVUPDJXNRC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FelipeVidal.HelloFormUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HelloForm;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		559DD798288AD80500A63F57 /* Build configuration list for PBXProject "HelloForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559DD7C5288AD80700A63F57 /* Debug */,
+				559DD7C6288AD80700A63F57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		559DD7C7288AD80700A63F57 /* Build configuration list for PBXNativeTarget "HelloForm" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559DD7C8288AD80700A63F57 /* Debug */,
+				559DD7C9288AD80700A63F57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		559DD7CA288AD80700A63F57 /* Build configuration list for PBXNativeTarget "HelloFormTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559DD7CB288AD80700A63F57 /* Debug */,
+				559DD7CC288AD80700A63F57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		559DD7CD288AD80700A63F57 /* Build configuration list for PBXNativeTarget "HelloFormUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559DD7CE288AD80700A63F57 /* Debug */,
+				559DD7CF288AD80700A63F57 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 559DD795288AD80500A63F57 /* Project object */;
+}
