@@ -135,7 +135,7 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = sections[indexPath.section].rows[indexPath.row]
-        if let row = row as? (any FormRow) {
+        if let row = row as? Row<FormRowConfiguration> {
             if row.configuration.deselectWhenSelect {
                 tableView.deselectRow(at: indexPath, animated: true)
             }

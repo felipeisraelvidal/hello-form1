@@ -7,32 +7,23 @@ public struct CustomRowBuilder {
     }
 }
 
-public struct CustomRow: FormRow {
+public final class CustomRow: Row<CustomRowConfiguration> {
     
-    public typealias RowConfiguration = Configuration
-    
-    public var image: UIImage?
     public var content: UIView
-    
-    public var action: (() -> Void)?
-    
-    public var configuration: Configuration = Configuration()
     
     public init(
         image: UIImage? = nil,
         @CustomRowBuilder _ content: () -> UIView,
-        configurationHandler: ((inout RowConfiguration) -> Void)? = nil
+        action: (() -> Void)? = nil,
+        configurationHandler: ((inout CustomRowConfiguration) -> Void)? = nil
     ) {
-        self.image = image
         self.content = content()
         
-        configurationHandler?(&configuration)
+        super.init(image: image, action: action, configurationHandler: configurationHandler)
     }
     
 }
 
-extension CustomRow {
-    public final class Configuration: FormRowConfiguration {
-        
-    }
+public final class CustomRowConfiguration: FormRowConfiguration {
+    
 }

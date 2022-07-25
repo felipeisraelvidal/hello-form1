@@ -17,6 +17,11 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
+    
+    private var topConstraint: NSLayoutConstraint?
+    private var leadingConstraint: NSLayoutConstraint?
+    private var trailingConstraint: NSLayoutConstraint?
+    private var bottomConstraint: NSLayoutConstraint?
 
     // MARK: - Initializers
     
@@ -36,12 +41,18 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
     private func setupConstraints() {
         
         contentView.addSubview(contentStackView)
-        NSLayoutConstraint.activate([
-            contentStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 12),
-            contentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            contentStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            contentStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -12)
-        ])
+        
+        topConstraint = contentStackView.topAnchor.constraint(equalTo: contentView.topAnchor)
+        topConstraint?.isActive = true
+        
+        leadingConstraint = contentStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor)
+        leadingConstraint?.isActive = true
+        
+        trailingConstraint = contentStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        trailingConstraint?.isActive = true
+        
+        bottomConstraint = contentStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        bottomConstraint?.isActive = true
         
     }
     
@@ -65,6 +76,13 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
         
         accessoryType = model.configuration.accessoryType
         selectionStyle = model.configuration.selectionStyle
+        
+        topConstraint?.constant = model.edgeInsets.top
+        leadingConstraint?.constant = model.edgeInsets.left
+        trailingConstraint?.constant = -model.edgeInsets.right
+        bottomConstraint?.constant = -model.edgeInsets.bottom
+        
+        layoutIfNeeded()
     }
     
     open func loadView() {}

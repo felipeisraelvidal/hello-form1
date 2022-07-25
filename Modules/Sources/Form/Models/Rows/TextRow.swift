@@ -1,36 +1,24 @@
 import UIKit
 
-public struct TextRow: FormRow {
+public final class TextRow: Row<TextRowConfiguration> {
     
-    public typealias RowConfiguration = Configuration
-    
-    public var image: UIImage?
     private(set) var text: String
-    
-    public var configuration: Configuration = Configuration()
-    
-    public var action: (() -> Void)?
     
     public init(
         _ text: String,
         image: UIImage? = nil,
-        configurationHandler: ((inout RowConfiguration) -> Void)? = nil,
+        configurationHandler: ((inout TextRowConfiguration) -> Void)? = nil,
         action: (() -> Void)? = nil
     ) {
         self.text = text
-        self.image = image
         
-        self.action = action
-        
-        configurationHandler?(&configuration)
+        super.init(image: image, action: action, configurationHandler: configurationHandler)
     }
     
 }
 
-extension TextRow {
-    public final class Configuration: FormRowConfiguration {
-        public var font: UIFont = .preferredFont(forTextStyle: .body)
-        public var textColor: UIColor = .label
-        public var textAlignment: NSTextAlignment = .natural
-    }
+public final class TextRowConfiguration: FormRowConfiguration {
+    public var font: UIFont = .preferredFont(forTextStyle: .body)
+    public var textColor: UIColor = .label
+    public var textAlignment: NSTextAlignment = .natural
 }
