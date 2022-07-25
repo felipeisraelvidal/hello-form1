@@ -11,7 +11,8 @@ let package = Package(
         .library(
             name: "Form",
             targets: [
-                "Form"
+                "Form",
+                "CoreUI"
             ]),
     ],
     dependencies: [
@@ -27,5 +28,8 @@ let package = Package(
         .testTarget(
             name: "FormTests",
             dependencies: ["Form"]),
+        .target(
+            name: "CoreUI",
+            dependencies: []),
     ]
 )

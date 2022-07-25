@@ -6,10 +6,14 @@ open class FormViewController: UIViewController {
     
     private(set) var sections: [FormSection] = []
     
+    open var tableViewStyle: UITableView.Style {
+        return .grouped
+    }
+    
     // MARK: - Views
     
     private lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .grouped)
+        let tableView = UITableView(frame: .zero, style: tableViewStyle)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -57,6 +61,15 @@ open class FormViewController: UIViewController {
     
     public func makeSections(@FormBuilder _ content: () -> [FormSection]) {
         self.sections = content()
+    }
+    
+    public func insertSection(_ section: FormSection, at index: Int) {
+        self.sections.insert(section, at: index)
+        print(sections[index])
+        
+        tableView.beginUpdates()
+        tableView.insertSections(IndexSet(integer: index), with: .automatic)
+        tableView.endUpdates()
     }
     
 }
@@ -126,6 +139,8 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
             if row.configuration.deselectWhenSelect {
                 tableView.deselectRow(at: indexPath, animated: true)
             }
+            
+            row.action?()
         }
     }
     

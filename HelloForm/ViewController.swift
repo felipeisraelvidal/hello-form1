@@ -1,5 +1,6 @@
 import UIKit
 import Form
+import CoreUI
 
 class ViewController: FormViewController {
 
@@ -14,20 +15,23 @@ class ViewController: FormViewController {
         
         let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         
-        let view = UIView()
-        view.backgroundColor = .systemGreen
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        NSLayoutConstraint.activate([
-            view.heightAnchor.constraint(equalToConstant: 70)
-        ])
-        
         makeSections {
-            FormSection(title: "Custom Row") {
+            FormSection {
                 CustomRow {
-                    view
-                } configurationHandler: {
-                    $0.backgroundColor = UIColor.systemYellow.withAlphaComponent(0.15)
+                    HStack {
+                        UIView()
+                            .setWidth(30)
+                            .setBackgroundColor(.systemBlue)
+                        
+                        UIView()
+                            .setWidth(30)
+                            .setBackgroundColor(.systemYellow)
+                    }
+                    .setSpacing(16)
+                    .setDistribution(.fillEqually)
+                    .setBackgroundColor(.systemRed)
+                    .fillSuperview(offset: 0)
+                    .setHeight(50)
                 }
             }
 
@@ -37,8 +41,6 @@ class ViewController: FormViewController {
                         $0.accessoryType = .disclosureIndicator
                         $0.textColor = .systemRed
                         $0.deselectWhenSelect = true
-                    } action: {
-                        print("Teste")
                     }
                     TextRow("Row 1") {
                         $0.selectionStyle = .none
@@ -51,7 +53,25 @@ class ViewController: FormViewController {
                 TextDescriptionRow(title: "Title", description: text)
                 TextDescriptionRow(.subtitle, title: "Title", description: text)
             }
+            
+            FormSection {
+                let swiftSymbol = UIImage.init(systemName: "swift")
+                
+                TextRow("Add New Section", image: swiftSymbol) {
+                    $0.textColor = .systemBlue
+                    $0.deselectWhenSelect = true
+                } action: { [weak self] in
+                    self?.test()
+                }
+            }
         }
+    }
+    
+    func test() {
+        let newSection = FormSection {
+            TextRow("Testing...")
+        }
+        insertSection(newSection, at: 1)
     }
 
 }
