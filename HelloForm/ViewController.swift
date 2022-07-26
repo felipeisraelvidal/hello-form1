@@ -60,7 +60,8 @@ class ViewController: FormViewController {
                 TextRow("Add New Section", image: swiftSymbol) {
                     $0.textColor = .systemBlue
                     $0.deselectWhenSelect = true
-                } action: { [weak self] in
+                }
+                .addAction { [weak self] in
                     self?.test()
                 }
             }

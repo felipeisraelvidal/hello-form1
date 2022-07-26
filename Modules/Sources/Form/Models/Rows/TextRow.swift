@@ -7,12 +7,11 @@ public final class TextRow: Row<TextRowConfiguration> {
     public init(
         _ text: String,
         image: UIImage? = nil,
-        configurationHandler: ((inout TextRowConfiguration) -> Void)? = nil,
-        action: (() -> Void)? = nil
+        configurationHandler: ((inout TextRowConfiguration) -> Void)? = nil
     ) {
         self.text = text
         
-        super.init(image: image, action: action, configurationHandler: configurationHandler)
+        super.init(image: image, configurationHandler: configurationHandler)
     }
     
 }

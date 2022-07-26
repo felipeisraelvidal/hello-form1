@@ -57,6 +57,14 @@ open class FormViewController: UIViewController {
         
     }
     
+    private func handleCellSelection<Configuration: FormRowConfiguration>(row: Row<Configuration>, at indexPath: IndexPath) {
+        if row.configuration.deselectWhenSelect {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
+        row.action?()
+    }
+    
     // MARK: - Public methods
     
     public func makeSections(@FormBuilder _ content: () -> [FormSection]) {
@@ -135,12 +143,16 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = sections[indexPath.section].rows[indexPath.row]
-        if let row = row as? Row<FormRowConfiguration> {
-            if row.configuration.deselectWhenSelect {
-                tableView.deselectRow(at: indexPath, animated: true)
-            }
-            
-            row.action?()
+        
+        switch row.self {
+        case let formRow where formRow is TextRow:
+            handleCellSelection(row: (formRow as! TextRow), at: indexPath)
+        case let formRow where formRow is TextDescriptionRow:
+            handleCellSelection(row: (formRow as! TextDescriptionRow), at: indexPath)
+        case let formRow where formRow is CustomRow:
+            handleCellSelection(row: (formRow as! CustomRow), at: indexPath)
+        default:
+            break
         }
     }
     

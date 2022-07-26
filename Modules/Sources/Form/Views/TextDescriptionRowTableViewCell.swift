@@ -24,6 +24,8 @@ class TextDescriptionRowTableViewCell: BaseTableViewCell<TextDescriptionRow> {
     // MARK: - Public methods
 
     override func configure(with model: TextDescriptionRow) {
+        super.configure(with: model)
+        
         switch model.cellStyle {
         case .default:
             stackView.axis = .horizontal

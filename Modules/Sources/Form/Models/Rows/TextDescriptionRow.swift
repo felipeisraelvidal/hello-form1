@@ -12,14 +12,13 @@ public final class TextDescriptionRow: Row<TextDescriptionRowConfiguration> {
         title: String,
         description: String,
         image: UIImage? = nil,
-        action: (() -> Void)? = nil,
         configurationHandler: ((inout TextDescriptionRowConfiguration) -> Void)? = nil
     ) {
         self.cellStyle = cellStyle
         self.title = title
         self.description = description
         
-        super.init(image: image, action: action, configurationHandler: configurationHandler)
+        super.init(image: image, configurationHandler: configurationHandler)
     }
     
 }

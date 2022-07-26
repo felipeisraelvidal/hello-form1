@@ -14,12 +14,11 @@ public final class CustomRow: Row<CustomRowConfiguration> {
     public init(
         image: UIImage? = nil,
         @CustomRowBuilder _ content: () -> UIView,
-        action: (() -> Void)? = nil,
         configurationHandler: ((inout CustomRowConfiguration) -> Void)? = nil
     ) {
         self.content = content()
         
-        super.init(image: image, action: action, configurationHandler: configurationHandler)
+        super.init(image: image, configurationHandler: configurationHandler)
     }
     
 }
