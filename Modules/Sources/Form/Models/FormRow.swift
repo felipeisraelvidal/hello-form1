@@ -42,6 +42,7 @@ public class Row<Configuration: FormRowConfiguration>: FormRow, FormRowModifier 
         return self
     }
     
+    @discardableResult
     public func addAction(_ action: @escaping () -> Void) -> Row {
         self.action = action
         return self

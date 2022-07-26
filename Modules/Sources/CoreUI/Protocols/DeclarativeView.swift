@@ -9,3 +9,11 @@ public protocol DeclarativeView {
     func setCornerRadius(_ cornerRadius: CGFloat) -> View
     func setBackgroundColor(_ color: UIColor) -> View
 }
+
+public protocol DeclarativeLabel {
+    associatedtype View: UILabel
+    
+    func setText(_ text: String) -> View
+    func setFont(_ font: UIFont) -> View
+    func setTextColor(_ color: UIColor) -> View
+}
