@@ -10,4 +10,5 @@ public protocol FormRowModifier {
     func setSelectionStyle(_ selectionStyle: UITableViewCell.SelectionStyle) -> Row
     func setDeselectWhenSelect(_ flag: Bool) -> Row
     func addAction(_ action: @escaping () -> Void) -> Row
+    func addDetailDisclosureButtonAction(_ action: @escaping () -> Void) -> Row
 }

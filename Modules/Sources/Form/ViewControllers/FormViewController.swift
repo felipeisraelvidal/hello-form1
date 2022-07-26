@@ -65,6 +65,10 @@ open class FormViewController: UIViewController {
         row.action?()
     }
     
+    private func handleAccessoryButtonTap(row: Row, at indexPath: IndexPath) {
+        row.detailDisclosureButtonAction?()
+    }
+    
     // MARK: - Public methods
     
     public func makeSections(@FormBuilder _ content: () -> [FormSection]) {
@@ -152,6 +156,20 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
             handleCellSelection(row: (formRow as! TextDescriptionRow), at: indexPath)
         case let formRow where formRow is CustomRow:
             handleCellSelection(row: (formRow as! CustomRow), at: indexPath)
+        default:
+            break
+        }
+    }
+    
+    public func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        let row = sections[indexPath.section].rows[indexPath.row]
+        switch row.self {
+        case let formRow where formRow is TextRow:
+            handleAccessoryButtonTap(row: (formRow as! TextRow), at: indexPath)
+        case let formRow where formRow is TextDescriptionRow:
+            handleAccessoryButtonTap(row: (formRow as! TextDescriptionRow), at: indexPath)
+        case let formRow where formRow is CustomRow:
+            handleAccessoryButtonTap(row: (formRow as! CustomRow), at: indexPath)
         default:
             break
         }

@@ -46,6 +46,10 @@ class ViewController: FormViewController {
             FormSection {
                 for item in arr {
                     TextRow(item)
+                        .setAccessoryType(.detailDisclosureButton)
+                        .addDetailDisclosureButtonAction {
+                            
+                        }
                 }
             }
 

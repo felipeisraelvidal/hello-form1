@@ -5,6 +5,7 @@ public protocol FormRowBase {}
 public protocol FormRow: FormRowBase {
     var image: UIImage? { get set }
     var action: (() -> Void)? { get set }
+    var detailDisclosureButtonAction: (() -> Void)? { get set }
     var edgeInsets: UIEdgeInsets { get set }
     var backgroundColor: UIColor? { get set }
     var tintColor: UIColor { get set }
@@ -18,6 +19,7 @@ public class Row: FormRow, FormRowModifier {
     // MARK: - Properties
     public var image: UIImage? = nil
     public var action: (() -> Void)? = nil
+    public var detailDisclosureButtonAction: (() -> Void)? = nil
     public var edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
     public var backgroundColor: UIColor?
     public var tintColor: UIColor = .systemBlue
@@ -72,6 +74,12 @@ public class Row: FormRow, FormRowModifier {
     @discardableResult
     public func addAction(_ action: @escaping () -> Void) -> Row {
         self.action = action
+        return self
+    }
+    
+    @discardableResult
+    public func addDetailDisclosureButtonAction(_ action: @escaping () -> Void) -> Row {
+        self.detailDisclosureButtonAction = action
         return self
     }
     
