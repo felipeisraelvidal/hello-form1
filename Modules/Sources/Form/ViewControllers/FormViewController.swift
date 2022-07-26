@@ -12,7 +12,7 @@ open class FormViewController: UIViewController {
     
     // MARK: - Views
     
-    private lazy var tableView: UITableView = {
+    private(set) public lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: tableViewStyle)
         tableView.dataSource = self
         tableView.delegate = self
@@ -69,6 +69,7 @@ open class FormViewController: UIViewController {
     
     public func makeSections(@FormBuilder _ content: () -> [FormSection]) {
         self.sections = content()
+        tableView.reloadData()
     }
     
     public func insertSection(_ section: FormSection, at index: Int) {
