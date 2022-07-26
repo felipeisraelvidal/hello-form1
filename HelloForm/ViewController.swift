@@ -20,18 +20,20 @@ class ViewController: FormViewController {
                 CustomRow {
                     HStack {
                         UIView()
-                            .setWidth(30)
                             .setBackgroundColor(.systemBlue)
                         
-                        UIView()
-                            .setWidth(30)
-                            .setBackgroundColor(.systemYellow)
+                        VStack {
+                            UILabel("Hello, World!")
+                            UILabel("Hello, World! 2")
+                                .setTextColor(.white)
+                        }
+                        .setBackgroundColor(.systemPurple)
                     }
                     .setSpacing(16)
                     .setDistribution(.fillEqually)
                     .setBackgroundColor(.systemRed)
                     .fillSuperview(offset: 0)
-                    .setHeight(50)
+                    .setHeight(80)
                 }
             }
 
