@@ -6,11 +6,11 @@ extension UIFont {
         return UIFont(descriptor: descriptor!, size: 0)
     }
     
-    func bold() -> UIFont {
+    public func bold() -> UIFont {
         return with(traits: .traitBold)
     }
     
-    func italic() -> UIFont {
+    public func italic() -> UIFont {
         return with(traits: .traitItalic)
     }
 }

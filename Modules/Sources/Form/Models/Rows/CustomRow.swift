@@ -7,22 +7,17 @@ public struct CustomRowBuilder {
     }
 }
 
-public final class CustomRow: Row<CustomRowConfiguration> {
+public final class CustomRow: Row {
     
     public var content: UIView
     
     public init(
         image: UIImage? = nil,
-        @CustomRowBuilder _ content: () -> UIView,
-        configurationHandler: ((inout CustomRowConfiguration) -> Void)? = nil
+        @CustomRowBuilder _ content: () -> UIView
     ) {
         self.content = content()
         
-        super.init(image: image, configurationHandler: configurationHandler)
+        super.init(image: image)
     }
-    
-}
-
-public final class CustomRowConfiguration: FormRowConfiguration {
     
 }

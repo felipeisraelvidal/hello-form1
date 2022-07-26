@@ -37,11 +37,11 @@ class TextDescriptionRowTableViewCell: BaseTableViewCell<TextDescriptionRow> {
             stackView.spacing = 4
         }
         
-        titleLabel.font = model.configuration.titleFont
-        titleLabel.textColor = model.configuration.titleTextColor
+        titleLabel.font = model.titleFont
+        titleLabel.textColor = model.titleTextColor
         
-        descriptionLabel.font = model.configuration.descriptionFont
-        descriptionLabel.textColor = model.configuration.descriptionTextColor
+        descriptionLabel.font = model.descriptionFont
+        descriptionLabel.textColor = model.descriptionTextColor
         
         titleLabel.text = model.title
         descriptionLabel.text = model.description

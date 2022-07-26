@@ -14,9 +14,9 @@ public class TextRowTableViewCell: BaseTableViewCell<TextRow> {
     public override func configure(with model: TextRow) {
         super.configure(with: model)
         
-        titleLabel.font = model.configuration.font
-        titleLabel.textColor = model.configuration.textColor
-        titleLabel.textAlignment = model.configuration.textAlignment
+        titleLabel.font = model.font
+        titleLabel.textColor = model.textColor
+        titleLabel.textAlignment = model.textAlignment
         
         titleLabel.text = model.text
     }

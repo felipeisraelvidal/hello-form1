@@ -57,8 +57,8 @@ open class FormViewController: UIViewController {
         
     }
     
-    private func handleCellSelection<Configuration: FormRowConfiguration>(row: Row<Configuration>, at indexPath: IndexPath) {
-        if row.configuration.deselectWhenSelect {
+    private func handleCellSelection(row: Row, at indexPath: IndexPath) {
+        if row.deselectWhenSelect {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         

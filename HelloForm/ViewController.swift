@@ -39,33 +39,34 @@ class ViewController: FormViewController {
 
             if shouldShowExperimental {
                 FormSection(title: "Section 1", footer: "Lorem Ipsum") {
-                    TextRow(text, image: .init(systemName: "iphone")) {
-                        $0.accessoryType = .disclosureIndicator
-                        $0.textColor = .systemRed
-                        $0.deselectWhenSelect = true
-                    }
-                    TextRow("Row 1") {
-                        $0.selectionStyle = .none
-                    }
+                    TextRow(text, image: .init(systemName: "iphone"))
+                        .setTextColor(.systemRed)
+                        .setAccessoryType(.disclosureIndicator)
+                        .setDeselectWhenSelect(true)
+                    
+                    TextRow("Row 1")
+                        .setSelectionStyle(.none)
+                    
                     TextRow("Row 2")
                 }
             }
 
             FormSection(footer: text) {
                 TextDescriptionRow(title: "Title", description: text)
+                    .setTextColor(titleLabel: .systemPurple, descriptionLabel: .systemBrown)
+                
                 TextDescriptionRow(.subtitle, title: "Title", description: text)
             }
             
             FormSection {
                 let swiftSymbol = UIImage.init(systemName: "swift")
                 
-                TextRow("Add New Section", image: swiftSymbol) {
-                    $0.textColor = .systemBlue
-                    $0.deselectWhenSelect = true
-                }
-                .addAction { [weak self] in
-                    self?.test()
-                }
+                TextRow("Add New Section", image: swiftSymbol)
+                    .setTextColor(.systemBlue)
+                    .setDeselectWhenSelect(true)
+                    .addAction { [weak self] in
+                        self?.test()
+                    }
             }
         }
     }
