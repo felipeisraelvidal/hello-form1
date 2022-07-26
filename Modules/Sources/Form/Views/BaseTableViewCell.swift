@@ -81,8 +81,6 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
         leadingConstraint?.constant = model.edgeInsets.left
         trailingConstraint?.constant = -model.edgeInsets.right
         bottomConstraint?.constant = -model.edgeInsets.bottom
-        
-        layoutIfNeeded()
     }
     
     open func loadView() {}
