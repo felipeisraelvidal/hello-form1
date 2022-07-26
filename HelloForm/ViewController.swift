@@ -15,6 +15,12 @@ class ViewController: FormViewController {
         
         let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         
+        let arr = [
+            "Item 1",
+            "Item 2",
+            "Item 3"
+        ]
+        
         makeSections {
             FormSection {
                 CustomRow {
@@ -34,6 +40,12 @@ class ViewController: FormViewController {
                     .setBackgroundColor(.systemRed)
                     .fillSuperview(offset: 0)
                     .setHeight(80)
+                }
+            }
+            
+            FormSection {
+                for item in arr {
+                    TextRow(item)
                 }
             }
 
