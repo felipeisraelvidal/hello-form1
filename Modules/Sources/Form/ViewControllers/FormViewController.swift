@@ -78,7 +78,6 @@ open class FormViewController: UIViewController {
     
     public func insertSection(_ section: FormSection, at index: Int) {
         self.sections.insert(section, at: index)
-        print(sections[index])
         
         tableView.beginUpdates()
         tableView.insertSections(IndexSet(integer: index), with: .automatic)

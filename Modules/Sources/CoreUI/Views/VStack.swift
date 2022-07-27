@@ -2,34 +2,25 @@ import UIKit
 
 public final class VStack: UIStackView {
     
-    public init(@StackBuilder views: () -> [UIView]) {
+    public init(
+        alignment: UIStackView.Alignment = .center,
+        distribution: UIStackView.Distribution = .fill,
+        spacing: CGFloat = 0,
+        @StackBuilder views: () -> [UIView]
+    ) {
         super.init(frame: .zero)
-        axis = .vertical
+        
+        self.axis = .vertical
+        self.alignment = alignment
+        self.distribution = distribution
+        self.spacing = spacing
+        
         translatesAutoresizingMaskIntoConstraints = false
         views().forEach { addArrangedSubview($0) }
     }
     
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-}
-
-extension VStack: StackModifier {
-    
-    public func setAlignment(_ alignment: UIStackView.Alignment) -> VStack {
-        self.alignment = alignment
-        return self
-    }
-    
-    public func setDistribution(_ distribution: UIStackView.Distribution) -> VStack {
-        self.distribution = distribution
-        return self
-    }
-    
-    public func setSpacing(_ spacing: CGFloat) -> VStack {
-        self.spacing = spacing
-        return self
     }
     
 }

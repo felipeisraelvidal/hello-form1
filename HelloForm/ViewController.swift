@@ -24,19 +24,19 @@ class ViewController: FormViewController {
         makeSections {
             FormSection {
                 CustomRow {
-                    HStack {
+                    HStack(alignment: .center, distribution: .fillEqually, spacing: 16) {
                         UIView()
                             .setBackgroundColor(.systemBlue)
+                            .setHeight(50)
                         
-                        VStack {
+                        VStack(alignment: .leading, spacing: 8) {
                             UILabel("Hello, World!")
+                            
                             UILabel("Hello, World! 2")
                                 .setTextColor(.white)
                         }
                         .setBackgroundColor(.systemPurple)
                     }
-                    .setSpacing(16)
-                    .setDistribution(.fillEqually)
                     .setBackgroundColor(.systemRed)
                     .fillSuperview(offset: 0)
                     .setHeight(80)
@@ -48,7 +48,7 @@ class ViewController: FormViewController {
                     TextRow(item)
                         .setAccessoryType(.detailDisclosureButton)
                         .addDetailDisclosureButtonAction {
-                            
+                            print("Teste")
                         }
                 }
             }
