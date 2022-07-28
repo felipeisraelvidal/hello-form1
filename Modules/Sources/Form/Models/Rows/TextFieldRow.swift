@@ -3,6 +3,7 @@ import UIKit
 public final class TextFieldRow: Row, TextFieldModifier {
     
     private(set) var placeholder: String
+    private(set) var text: Observable<String>
     
     private(set) var font: UIFont = .preferredFont(forTextStyle: .body)
     private(set) var textColor: UIColor = .label
@@ -18,8 +19,9 @@ public final class TextFieldRow: Row, TextFieldModifier {
     
     // MARK: - Initializers
     
-    public init(_ placeholder: String, image: UIImage? = nil) {
+    public init(_ placeholder: String, text: Observable<String>, image: UIImage? = nil) {
         self.placeholder = placeholder
+        self.text = text
         
         super.init(image: image)
     }

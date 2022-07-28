@@ -13,6 +13,7 @@ class TextFieldRowTableViewCell: BaseTableViewCell<TextFieldRow> {
         let textField = UITextField()
         textField.fillSuperview(offset: 0)
         textField.delegate = self
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -36,10 +37,20 @@ class TextFieldRowTableViewCell: BaseTableViewCell<TextFieldRow> {
         textField.placeholder = model.placeholder
         
         textField.tintColor = model.tintColor
+        
+        model.text.bind { result in
+            self.textField.text = result
+        }
     }
     
     override func loadView() {
         contentStackView.addArrangedSubview(textField)
+    }
+    
+    // MARK: - Private methods
+    
+    @objc private func textFieldDidChange(_ textField: UITextField) {
+        model?.text.value = textField.text ?? ""
     }
 
 }

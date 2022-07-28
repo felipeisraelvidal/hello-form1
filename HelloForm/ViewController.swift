@@ -3,6 +3,8 @@ import Form
 import CoreUI
 
 class ViewController: FormViewController {
+    
+    private var text = Observable("")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +46,10 @@ class ViewController: FormViewController {
             }
             
             FormSection(footer: "Enter your text and tap enter to add new item") {
-                TextFieldRow("Placeholder")
+                TextFieldRow("Placeholder", text: self.text)
                     .setFont(.preferredFont(forTextStyle: .title2))
-                    .onSubmit { [weak self] text in
-                        self?.addRow(text: text)
+                    .onSubmit { [weak self] _ in
+                        self?.addRow()
                     }
                     .autocapitalizationType(.sentences)
                     .clearButtonMode(.whileEditing)
@@ -107,10 +109,13 @@ class ViewController: FormViewController {
         insertSection(newSection, at: 1)
     }
     
-    func addRow(text: String) {
-        let newTextRow = TextRow(text)
+    func addRow() {
+        let newTextRow = TextRow(text.value)
             .setAccessoryType(.detailDisclosureButton)
+        
         insertRow(newTextRow, atSection: "section_1", at: 0)
+        
+        self.text.value = ""
     }
 
 }
