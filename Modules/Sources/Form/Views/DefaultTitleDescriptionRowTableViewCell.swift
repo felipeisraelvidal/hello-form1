@@ -12,6 +12,7 @@ class DefaultTitleDescriptionRowTableViewCell: BaseTableViewCell<TitleDescriptio
     private(set) lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.textAlignment = .right
         label.adjustsFontForContentSizeCategory = true
         return label
     }()

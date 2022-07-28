@@ -2,10 +2,6 @@ import UIKit
 
 class SwitchRowTableViewCell: BaseTableViewCell<SwitchRow> {
 
-    // MARK: - Properties
-    
-    private var model: SwitchRow?
-    
     // MARK: - Views
     
     private lazy var titleLabel: UILabel = {
@@ -31,8 +27,6 @@ class SwitchRowTableViewCell: BaseTableViewCell<SwitchRow> {
     
     override func configure(with model: SwitchRow, atIndexPath indexPath: IndexPath) {
         super.configure(with: model, atIndexPath: indexPath)
-        
-        self.model = model
         
         titleLabel.font = model._font
         titleLabel.textColor = model._textColor

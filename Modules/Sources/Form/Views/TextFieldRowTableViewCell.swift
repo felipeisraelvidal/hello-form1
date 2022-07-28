@@ -3,10 +3,6 @@ import CoreUI
 
 class TextFieldRowTableViewCell: BaseTableViewCell<TextFieldRow> {
     
-    // MARK: - Properties
-    
-    private var model: TextFieldRow?
-    
     // MARK: - Views
     
     private lazy var textField: UITextField = {
@@ -22,8 +18,6 @@ class TextFieldRowTableViewCell: BaseTableViewCell<TextFieldRow> {
     
     override func configure(with model: TextFieldRow, atIndexPath indexPath: IndexPath) {
         super.configure(with: model, atIndexPath: indexPath)
-        
-        self.model = model
         
         textField.font = model._font
         textField.textColor = model._textColor

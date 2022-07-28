@@ -3,6 +3,7 @@ import UIKit
 public class BaseTableViewCell<T: FormRow>: UITableViewCell {
     
     private(set) var indexPath: IndexPath?
+    private(set) var model: T?
     
     private(set) lazy var contentStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [])
@@ -62,6 +63,7 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
     
     open func configure(with model: T, atIndexPath indexPath: IndexPath) {
         self.indexPath = indexPath
+        self.model = model
         
         if let image = model.image {
             iconImageView.image = image
