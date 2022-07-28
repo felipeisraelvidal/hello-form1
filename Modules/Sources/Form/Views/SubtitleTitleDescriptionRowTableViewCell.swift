@@ -27,8 +27,8 @@ class SubtitleTitleDescriptionRowTableViewCell: BaseTableViewCell<TitleDescripti
 
     // MARK: - Public methods
 
-    override func configure(with model: TitleDescriptionRow) {
-        super.configure(with: model)
+    override func configure(with model: TitleDescriptionRow, atIndexPath indexPath: IndexPath) {
+        super.configure(with: model, atIndexPath: indexPath)
         
         titleLabel.font = model._titleFont
         titleLabel.textColor = model._titleTextColor

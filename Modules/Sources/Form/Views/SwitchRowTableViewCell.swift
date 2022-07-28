@@ -29,8 +29,8 @@ class SwitchRowTableViewCell: BaseTableViewCell<SwitchRow> {
     
     // MARK: - Public methods
     
-    override func configure(with model: SwitchRow) {
-        super.configure(with: model)
+    override func configure(with model: SwitchRow, atIndexPath indexPath: IndexPath) {
+        super.configure(with: model, atIndexPath: indexPath)
         
         self.model = model
         

@@ -2,8 +2,8 @@ import UIKit
 
 class CustomRowTableViewCell: BaseTableViewCell<CustomRow> {
     
-    override func configure(with model: CustomRow) {
-        super.configure(with: model)
+    override func configure(with model: CustomRow, atIndexPath indexPath: IndexPath) {
+        super.configure(with: model, atIndexPath: indexPath)
         
         contentStackView.addArrangedSubview(model.content)
     }

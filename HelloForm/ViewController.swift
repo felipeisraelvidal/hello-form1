@@ -8,6 +8,8 @@ class ViewController: FormViewController {
     private var isPrivate = Observable(false)
     
     private var testString = Observable("Hello, World!")
+    
+    private let loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +19,6 @@ class ViewController: FormViewController {
         view.backgroundColor = .systemBackground
         
         let shouldShowExperimental = true
-        
-        let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         
         let arr = [
             "Item 1",
@@ -83,7 +83,7 @@ class ViewController: FormViewController {
 
             if shouldShowExperimental {
                 FormSection(title: "Section 1", footer: "Lorem Ipsum") {
-                    TextRow(text, image: .init(systemName: "iphone"))
+                    TextRow(loremIpsum, image: .init(systemName: "iphone"))
                         .textColor(.systemRed)
                         .accessoryType(.disclosureIndicator)
                         .deselectWhenSelect(true)
@@ -95,14 +95,21 @@ class ViewController: FormViewController {
                 }
             }
 
-            FormSection(footer: text) {
+            FormSection(footer: loremIpsum) {
                 TitleDescriptionRow(title: "Title", description: .right(testString))
                     .textColor(
                         titleLabel: .systemPurple,
                         descriptionLabel: .systemBrown
                     )
                 
-                TitleDescriptionRow(.subtitle, title: "Title", description: .left(text))
+                TitleDescriptionRow(.subtitle, title: "Title", description: .left(loremIpsum))
+                
+                TextRow("Reload First Cell")
+                    .textColor(.systemBlue)
+                    .deselectWhenSelect(true)
+                    .addAction { [weak self] in
+                        self?.updateFirstCell()
+                    }
             }
             
             FormSection {
@@ -118,13 +125,15 @@ class ViewController: FormViewController {
         }
     }
     
+    func updateFirstCell() {
+        testString.value = loremIpsum
+    }
+    
     func addSection() {
-//        let newSection = FormSection {
-//            TextRow("Testing...")
-//        }
-//        appendSection(newSection)
-        testString.value = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        reloadData(animated: true)
+        let newSection = FormSection {
+            TextRow("Testing...")
+        }
+        appendSection(newSection)
     }
     
     func addRow() {

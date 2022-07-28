@@ -2,6 +2,8 @@ import UIKit
 
 public class BaseTableViewCell<T: FormRow>: UITableViewCell {
     
+    private(set) var indexPath: IndexPath?
+    
     private(set) lazy var contentStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [])
         stackView.axis = .horizontal
@@ -58,7 +60,9 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
     
     // MARK: - Public methods
     
-    open func configure(with model: T) {
+    open func configure(with model: T, atIndexPath indexPath: IndexPath) {
+        self.indexPath = indexPath
+        
         if let image = model.image {
             iconImageView.image = image
             iconImageView.tintColor = model._tintColor

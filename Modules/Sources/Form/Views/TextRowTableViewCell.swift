@@ -11,8 +11,8 @@ public class TextRowTableViewCell: BaseTableViewCell<TextRow> {
     
     // MARK: - Public methods
     
-    public override func configure(with model: TextRow) {
-        super.configure(with: model)
+    public override func configure(with model: TextRow, atIndexPath indexPath: IndexPath) {
+        super.configure(with: model, atIndexPath: indexPath)
         
         titleLabel.font = model._font
         titleLabel.textColor = model._textColor

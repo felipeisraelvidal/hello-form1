@@ -159,7 +159,7 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             
-            cell.configure(with: formRow as! TextRow)
+            cell.configure(with: formRow as! TextRow, atIndexPath: indexPath)
             
             return cell
         case let formRow where formRow is TitleDescriptionRow:
@@ -170,7 +170,7 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
                     return UITableViewCell()
                 }
                 
-                cell.configure(with: formRow)
+                cell.configure(with: formRow, atIndexPath: indexPath)
                 
                 return cell
             case .subtitle:
@@ -178,7 +178,7 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
                     return UITableViewCell()
                 }
                 
-                cell.configure(with: formRow)
+                cell.configure(with: formRow, atIndexPath: indexPath)
                 
                 return cell
             }
@@ -187,7 +187,7 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             
-            cell.configure(with: formRow as! CustomRow)
+            cell.configure(with: formRow as! CustomRow, atIndexPath: indexPath)
             
             return cell
         case let formRow where formRow is TextFieldRow:
@@ -195,7 +195,7 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             
-            cell.configure(with: formRow as! TextFieldRow)
+            cell.configure(with: formRow as! TextFieldRow, atIndexPath: indexPath)
             
             return cell
         case let formRow where formRow is SwitchRow:
@@ -203,7 +203,7 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
                 return UITableViewCell()
             }
             
-            cell.configure(with: formRow as! SwitchRow)
+            cell.configure(with: formRow as! SwitchRow, atIndexPath: indexPath)
             
             return cell
         default:

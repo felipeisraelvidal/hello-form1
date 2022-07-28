@@ -20,8 +20,8 @@ class TextFieldRowTableViewCell: BaseTableViewCell<TextFieldRow> {
 
     // MARK: - Public methods
     
-    override func configure(with model: TextFieldRow) {
-        super.configure(with: model)
+    override func configure(with model: TextFieldRow, atIndexPath indexPath: IndexPath) {
+        super.configure(with: model, atIndexPath: indexPath)
         
         self.model = model
         

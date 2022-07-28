@@ -27,8 +27,8 @@ class DefaultTitleDescriptionRowTableViewCell: BaseTableViewCell<TitleDescriptio
 
     // MARK: - Public methods
 
-    override func configure(with model: TitleDescriptionRow) {
-        super.configure(with: model)
+    override func configure(with model: TitleDescriptionRow, atIndexPath indexPath: IndexPath) {
+        super.configure(with: model, atIndexPath: indexPath)
         
         titleLabel.font = model._titleFont
         titleLabel.textColor = model._titleTextColor
@@ -44,6 +44,7 @@ class DefaultTitleDescriptionRowTableViewCell: BaseTableViewCell<TitleDescriptio
         case .right(let value):
             value.bind { [weak self] result in
                 self?.descriptionLabel.text = result
+                self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
             }
         }
         
