@@ -85,6 +85,16 @@ open class FormViewController: UIViewController {
         tableView.endUpdates()
     }
     
+    public func insertRow(_ row: FormRowBase, atSection sectionIdentifier: String, at index: Int) {
+        if let setionIndex = sections.firstIndex(where: { $0.identifier == sectionIdentifier }) {
+            self.sections[setionIndex].insert(row, at: index)
+            
+            tableView.beginUpdates()
+            tableView.insertRows(at: [IndexPath(row: index, section: setionIndex)], with: .automatic)
+            tableView.endUpdates()
+        }
+    }
+    
 }
 
 extension FormViewController: UITableViewDataSource, UITableViewDelegate {

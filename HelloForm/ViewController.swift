@@ -43,20 +43,20 @@ class ViewController: FormViewController {
                 }
             }
             
-            FormSection {
+            FormSection(footer: "Enter your text and tap enter to add new item") {
                 TextFieldRow("Placeholder")
                     .setFont(.preferredFont(forTextStyle: .title2))
-                    .onSubmit { text in
-                        print(text)
+                    .onSubmit { [weak self] text in
+                        self?.addRow(text: text)
                     }
-                    .autocapitalizationType(.allCharacters)
+                    .autocapitalizationType(.sentences)
                     .clearButtonMode(.whileEditing)
                     .returnKeyType(.done)
                     .setSelectionStyle(.none)
                     .padding(top: 16, bottom: 16)
             }
             
-            FormSection {
+            FormSection("section_1") {
                 for item in arr {
                     TextRow(item)
                         .setAccessoryType(.detailDisclosureButton)
@@ -94,17 +94,23 @@ class ViewController: FormViewController {
                     .setTextColor(.systemBlue)
                     .setDeselectWhenSelect(true)
                     .addAction { [weak self] in
-                        self?.test()
+                        self?.addSection()
                     }
             }
         }
     }
     
-    func test() {
+    func addSection() {
         let newSection = FormSection {
             TextRow("Testing...")
         }
         insertSection(newSection, at: 1)
+    }
+    
+    func addRow(text: String) {
+        let newTextRow = TextRow(text)
+            .setAccessoryType(.detailDisclosureButton)
+        insertRow(newTextRow, atSection: "section_1", at: 0)
     }
 
 }
