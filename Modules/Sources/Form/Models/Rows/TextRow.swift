@@ -3,9 +3,9 @@ import UIKit
 public final class TextRow: Row, TextRowModifier {
     private(set) var text: String
     
-    private(set) var font: UIFont = .preferredFont(forTextStyle: .body)
-    private(set) var textColor: UIColor = .label
-    private(set) var textAlignment: NSTextAlignment = .natural
+    private(set) var _font: UIFont = .preferredFont(forTextStyle: .body)
+    private(set) var _textColor: UIColor = .label
+    private(set) var _textAlignment: NSTextAlignment = .natural
     
     public init(
         _ text: String,
@@ -19,20 +19,20 @@ public final class TextRow: Row, TextRowModifier {
     // MARK: - Modifiers
     
     @discardableResult
-    public func setFont(_ font: UIFont) -> TextRow {
-        self.font = font
+    public func font(_ font: UIFont) -> TextRow {
+        self._font = font
         return self
     }
     
     @discardableResult
-    public func setTextColor(_ color: UIColor) -> TextRow {
-        self.textColor = color
+    public func textColor(_ color: UIColor) -> TextRow {
+        self._textColor = color
         return self
     }
     
     @discardableResult
-    public func setTextAlignment(_ alignment: NSTextAlignment) -> TextRow {
-        self.textAlignment = alignment
+    public func textAlignment(_ alignment: NSTextAlignment) -> TextRow {
+        self._textAlignment = alignment
         return self
     }
     

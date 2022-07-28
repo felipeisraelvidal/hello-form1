@@ -14,14 +14,15 @@ public class TextRowTableViewCell: BaseTableViewCell<TextRow> {
     public override func configure(with model: TextRow) {
         super.configure(with: model)
         
-        titleLabel.font = model.font
-        titleLabel.textColor = model.textColor
-        titleLabel.textAlignment = model.textAlignment
+        titleLabel.font = model._font
+        titleLabel.textColor = model._textColor
+        titleLabel.textAlignment = model._textAlignment
         
         titleLabel.text = model.text
     }
     
     public override func loadView() {
+        super.loadView()
         contentStackView.addArrangedSubview(titleLabel)
     }
 

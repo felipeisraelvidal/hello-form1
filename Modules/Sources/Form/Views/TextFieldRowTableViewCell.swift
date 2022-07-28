@@ -25,9 +25,9 @@ class TextFieldRowTableViewCell: BaseTableViewCell<TextFieldRow> {
         
         self.model = model
         
-        textField.font = model.font
-        textField.textColor = model.textColor
-        textField.textAlignment = model.textAlignment
+        textField.font = model._font
+        textField.textColor = model._textColor
+        textField.textAlignment = model._textAlignment
         textField.borderStyle = model._textFieldStyle
         textField.returnKeyType = model._returnKeyType
         textField.autocapitalizationType = model._autocapitalizationType
@@ -36,7 +36,7 @@ class TextFieldRowTableViewCell: BaseTableViewCell<TextFieldRow> {
         
         textField.placeholder = model.placeholder
         
-        textField.tintColor = model.tintColor
+        textField.tintColor = model._tintColor
         
         model.text.bind { result in
             self.textField.text = result

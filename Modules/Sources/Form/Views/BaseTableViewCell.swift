@@ -61,7 +61,7 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
     open func configure(with model: T) {
         if let image = model.image {
             iconImageView.image = image
-            iconImageView.tintColor = model.tintColor
+            iconImageView.tintColor = model._tintColor
             
             NSLayoutConstraint.activate([
                 iconImageView.widthAnchor.constraint(equalToConstant: 25)
@@ -70,12 +70,12 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
             contentStackView.insertArrangedSubview(iconImageView, at: 0)
         }
         
-        if let backgroundColor = model.backgroundColor {
+        if let backgroundColor = model._backgroundColor {
             self.backgroundColor = backgroundColor
         }
         
-        accessoryType = model.accessoryType
-        selectionStyle = model.selectionStyle
+        accessoryType = model._accessoryType
+        selectionStyle = model._selectionStyle
         
         topConstraint?.constant = model.edgeInsets.top
         leadingConstraint?.constant = model.edgeInsets.left

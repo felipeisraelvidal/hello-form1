@@ -39,7 +39,7 @@ class SwitchRowTableViewCell: BaseTableViewCell<SwitchRow> {
         
         titleLabel.text = model.title
         
-        swt.tintColor = model.tintColor
+        swt.tintColor = model._tintColor
         
         model.isOn.bind { result in
             self.swt.setOn(result, animated: true)

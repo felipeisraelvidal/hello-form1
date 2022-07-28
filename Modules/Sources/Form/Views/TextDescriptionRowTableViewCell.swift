@@ -37,17 +37,18 @@ class TextDescriptionRowTableViewCell: BaseTableViewCell<TextDescriptionRow> {
             stackView.spacing = 4
         }
         
-        titleLabel.font = model.titleFont
-        titleLabel.textColor = model.titleTextColor
+        titleLabel.font = model._titleFont
+        titleLabel.textColor = model._titleTextColor
         
-        descriptionLabel.font = model.descriptionFont
-        descriptionLabel.textColor = model.descriptionTextColor
+        descriptionLabel.font = model._descriptionFont
+        descriptionLabel.textColor = model._descriptionTextColor
         
         titleLabel.text = model.title
         descriptionLabel.text = model.description
     }
     
     override func loadView() {
+        super.loadView()
         contentStackView.addArrangedSubview(stackView)
     }
 

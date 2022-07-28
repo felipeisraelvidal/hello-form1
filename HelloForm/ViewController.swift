@@ -48,22 +48,22 @@ class ViewController: FormViewController {
             
             FormSection(footer: "Enter your text and tap enter to add new item") {
                 SwitchRow("Is private", isOn: isPrivate)
-                    .setSelectionStyle(.none)
+                    .selectionStyle(.none)
                 
                 TextFieldRow("Placeholder", text: self.text)
-                    .setFont(.preferredFont(forTextStyle: .title2))
+                    .font(.preferredFont(forTextStyle: .title2))
                     .onSubmit { [weak self] _ in
                         self?.addRow()
                     }
                     .autocapitalizationType(.sentences)
                     .clearButtonMode(.whileEditing)
                     .returnKeyType(.done)
-                    .setSelectionStyle(.none)
+                    .selectionStyle(.none)
                     .padding(top: 16, bottom: 16)
                 
                 TextRow("Add Item")
-                    .setTextColor(.systemBlue)
-                    .setDeselectWhenSelect(true)
+                    .textColor(.systemBlue)
+                    .deselectWhenSelect(true)
                     .addAction { [weak self] in
                         self?.addRow()
                     }
@@ -72,7 +72,7 @@ class ViewController: FormViewController {
             FormSection("section_1") {
                 for item in arr {
                     TextRow(item)
-                        .setAccessoryType(.detailDisclosureButton)
+                        .accessoryType(.detailDisclosureButton)
                         .addDetailDisclosureButtonAction {
                             print("Teste")
                         }
@@ -82,12 +82,12 @@ class ViewController: FormViewController {
             if shouldShowExperimental {
                 FormSection(title: "Section 1", footer: "Lorem Ipsum") {
                     TextRow(text, image: .init(systemName: "iphone"))
-                        .setTextColor(.systemRed)
-                        .setAccessoryType(.disclosureIndicator)
-                        .setDeselectWhenSelect(true)
+                        .textColor(.systemRed)
+                        .accessoryType(.disclosureIndicator)
+                        .deselectWhenSelect(true)
                     
                     TextRow("Row 1")
-                        .setSelectionStyle(.none)
+                        .selectionStyle(.none)
                     
                     TextRow("Row 2")
                 }
@@ -95,7 +95,10 @@ class ViewController: FormViewController {
 
             FormSection(footer: text) {
                 TextDescriptionRow(title: "Title", description: text)
-                    .setTextColor(titleLabel: .systemPurple, descriptionLabel: .systemBrown)
+                    .textColor(
+                        titleLabel: .systemPurple,
+                        descriptionLabel: .systemBrown
+                    )
                 
                 TextDescriptionRow(.subtitle, title: "Title", description: text)
             }
@@ -104,8 +107,8 @@ class ViewController: FormViewController {
                 let swiftSymbol = UIImage.init(systemName: "swift")
                 
                 TextRow("Add New Section", image: swiftSymbol)
-                    .setTextColor(.systemBlue)
-                    .setDeselectWhenSelect(true)
+                    .textColor(.systemBlue)
+                    .deselectWhenSelect(true)
                     .addAction { [weak self] in
                         self?.addSection()
                     }
@@ -123,7 +126,7 @@ class ViewController: FormViewController {
     func addRow() {
         if text.value != "" {
             let newTextRow = TextRow("\(isPrivate.value ? "[L] " : "")\(text.value)")
-                .setAccessoryType(.detailDisclosureButton)
+                .accessoryType(.detailDisclosureButton)
             
             insertRow(newTextRow, atSection: "section_1", at: 0)
             

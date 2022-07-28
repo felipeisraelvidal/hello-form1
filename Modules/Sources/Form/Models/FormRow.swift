@@ -7,11 +7,11 @@ public protocol FormRow: FormRowBase {
     var action: (() -> Void)? { get set }
     var detailDisclosureButtonAction: (() -> Void)? { get set }
     var edgeInsets: UIEdgeInsets { get set }
-    var backgroundColor: UIColor? { get set }
-    var tintColor: UIColor { get set }
-    var accessoryType: UITableViewCell.AccessoryType { get set }
-    var selectionStyle: UITableViewCell.SelectionStyle { get set }
-    var deselectWhenSelect: Bool { get set }
+    var _backgroundColor: UIColor? { get set }
+    var _tintColor: UIColor { get set }
+    var _accessoryType: UITableViewCell.AccessoryType { get set }
+    var _selectionStyle: UITableViewCell.SelectionStyle { get set }
+    var _deselectWhenSelect: Bool { get set }
 }
 
 public class Row: FormRow, FormRowModifier {
@@ -21,11 +21,11 @@ public class Row: FormRow, FormRowModifier {
     public var action: (() -> Void)? = nil
     public var detailDisclosureButtonAction: (() -> Void)? = nil
     public var edgeInsets: UIEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
-    public var backgroundColor: UIColor?
-    public var tintColor: UIColor = .systemBlue
-    public var accessoryType: UITableViewCell.AccessoryType = .none
-    public var selectionStyle: UITableViewCell.SelectionStyle = .default
-    public var deselectWhenSelect: Bool = false
+    public var _backgroundColor: UIColor?
+    public var _tintColor: UIColor = .systemBlue
+    public var _accessoryType: UITableViewCell.AccessoryType = .none
+    public var _selectionStyle: UITableViewCell.SelectionStyle = .default
+    public var _deselectWhenSelect: Bool = false
     
     // MARK: - Initializers
     
@@ -42,32 +42,32 @@ public class Row: FormRow, FormRowModifier {
     }
     
     @discardableResult
-    public func setBackgroundColor(_ color: UIColor) -> Row {
-        self.backgroundColor = color
+    public func backgroundColor(_ color: UIColor) -> Row {
+        self._backgroundColor = color
         return self
     }
     
     @discardableResult
-    public func setTintColor(_ color: UIColor) -> Row {
-        self.tintColor = color
+    public func tintColor(_ color: UIColor) -> Row {
+        self._tintColor = color
         return self
     }
     
     @discardableResult
-    public func setAccessoryType(_ accessoryType: UITableViewCell.AccessoryType) -> Row {
-        self.accessoryType = accessoryType
+    public func accessoryType(_ accessoryType: UITableViewCell.AccessoryType) -> Row {
+        self._accessoryType = accessoryType
         return self
     }
     
     @discardableResult
-    public func setSelectionStyle(_ selectionStyle: UITableViewCell.SelectionStyle) -> Row {
-        self.selectionStyle = selectionStyle
+    public func selectionStyle(_ selectionStyle: UITableViewCell.SelectionStyle) -> Row {
+        self._selectionStyle = selectionStyle
         return self
     }
     
     @discardableResult
-    public func setDeselectWhenSelect(_ flag: Bool) -> Row {
-        self.deselectWhenSelect = flag
+    public func deselectWhenSelect(_ flag: Bool) -> Row {
+        self._deselectWhenSelect = flag
         return self
     }
     

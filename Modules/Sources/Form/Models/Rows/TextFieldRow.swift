@@ -5,9 +5,9 @@ public final class TextFieldRow: Row, TextFieldModifier {
     private(set) var placeholder: String
     private(set) var text: Observable<String>
     
-    private(set) var font: UIFont = .preferredFont(forTextStyle: .body)
-    private(set) var textColor: UIColor = .label
-    private(set) var textAlignment: NSTextAlignment = .natural
+    private(set) var _font: UIFont = .preferredFont(forTextStyle: .body)
+    private(set) var _textColor: UIColor = .label
+    private(set) var _textAlignment: NSTextAlignment = .natural
     
     private(set) var _textFieldStyle: UITextField.BorderStyle = .none
     private(set) var _returnKeyType: UIReturnKeyType = .default
@@ -29,20 +29,20 @@ public final class TextFieldRow: Row, TextFieldModifier {
     // MARK: - Modifiers
     
     @discardableResult
-    public func setFont(_ font: UIFont) -> TextFieldRow {
-        self.font = font
+    public func font(_ font: UIFont) -> TextFieldRow {
+        self._font = font
         return self
     }
     
     @discardableResult
-    public func setTextColor(_ color: UIColor) -> TextFieldRow {
-        self.textColor = color
+    public func textColor(_ color: UIColor) -> TextFieldRow {
+        self._textColor = color
         return self
     }
     
     @discardableResult
-    public func setTextAlignment(_ alignment: NSTextAlignment) -> TextFieldRow {
-        self.textAlignment = alignment
+    public func textAlignment(_ alignment: NSTextAlignment) -> TextFieldRow {
+        self._textAlignment = alignment
         return self
     }
     
