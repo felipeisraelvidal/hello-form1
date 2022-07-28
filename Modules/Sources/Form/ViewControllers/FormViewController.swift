@@ -54,6 +54,7 @@ open class FormViewController: UIViewController {
         tableView.register(TextDescriptionRowTableViewCell.self, forCellReuseIdentifier: TextDescriptionRowTableViewCell.identifier)
         tableView.register(CustomRowTableViewCell.self, forCellReuseIdentifier: CustomRowTableViewCell.identifier)
         tableView.register(TextFieldRowTableViewCell.self, forCellReuseIdentifier: TextFieldRowTableViewCell.identifier)
+        tableView.register(SwitchRowTableViewCell.self, forCellReuseIdentifier: SwitchRowTableViewCell.identifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
     }
@@ -165,6 +166,14 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
             cell.configure(with: formRow as! TextFieldRow)
+            
+            return cell
+        case let formRow where formRow is SwitchRow:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchRowTableViewCell.identifier, for: indexPath) as? SwitchRowTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.configure(with: formRow as! SwitchRow)
             
             return cell
         default:

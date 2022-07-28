@@ -44,6 +44,7 @@ class TextFieldRowTableViewCell: BaseTableViewCell<TextFieldRow> {
     }
     
     override func loadView() {
+        super.loadView()
         contentStackView.addArrangedSubview(textField)
     }
     

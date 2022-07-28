@@ -5,6 +5,7 @@ import CoreUI
 class ViewController: FormViewController {
     
     private var text = Observable("")
+    private var isPrivate = Observable(false)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,9 @@ class ViewController: FormViewController {
             }
             
             FormSection(footer: "Enter your text and tap enter to add new item") {
+                SwitchRow("Is private", isOn: isPrivate)
+                    .setSelectionStyle(.none)
+                
                 TextFieldRow("Placeholder", text: self.text)
                     .setFont(.preferredFont(forTextStyle: .title2))
                     .onSubmit { [weak self] _ in
@@ -56,6 +60,13 @@ class ViewController: FormViewController {
                     .returnKeyType(.done)
                     .setSelectionStyle(.none)
                     .padding(top: 16, bottom: 16)
+                
+                TextRow("Add Item")
+                    .setTextColor(.systemBlue)
+                    .setDeselectWhenSelect(true)
+                    .addAction { [weak self] in
+                        self?.addRow()
+                    }
             }
             
             FormSection("section_1") {
@@ -110,12 +121,14 @@ class ViewController: FormViewController {
     }
     
     func addRow() {
-        let newTextRow = TextRow(text.value)
-            .setAccessoryType(.detailDisclosureButton)
-        
-        insertRow(newTextRow, atSection: "section_1", at: 0)
-        
-        self.text.value = ""
+        if text.value != "" {
+            let newTextRow = TextRow("\(isPrivate.value ? "[L] " : "")\(text.value)")
+                .setAccessoryType(.detailDisclosureButton)
+            
+            insertRow(newTextRow, atSection: "section_1", at: 0)
+            
+            self.text.value = ""
+        }
     }
 
 }
