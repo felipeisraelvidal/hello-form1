@@ -1,11 +1,11 @@
 import UIKit
 
-public final class TextDescriptionRow: Row, TextDescriptionRowModifier {
+public final class TitleDescriptionRow: Row, TextDescriptionRowModifier {
     
     public var cellStyle: CellStyle = .default
     
     public var title: String
-    public var description: String
+    public var description: Either<String, Observable<String>>
     
     private(set) var _titleFont: UIFont = .preferredFont(forTextStyle: .body).bold()
     private(set) var _titleTextColor: UIColor = .label
@@ -17,7 +17,7 @@ public final class TextDescriptionRow: Row, TextDescriptionRowModifier {
     public init(
         _ cellStyle: CellStyle = .default,
         title: String,
-        description: String,
+        description: Either<String, Observable<String>>,
         image: UIImage? = nil
     ) {
         self.cellStyle = cellStyle
@@ -33,7 +33,7 @@ public final class TextDescriptionRow: Row, TextDescriptionRowModifier {
     public func font(
         titleLabel: UIFont = UIFont.preferredFont(forTextStyle: .body).bold(),
         descritionLabel: UIFont = UIFont.preferredFont(forTextStyle: .body)
-    ) -> TextDescriptionRow {
+    ) -> TitleDescriptionRow {
         self._titleFont = titleLabel
         self._descriptionFont = descritionLabel
         return self
@@ -43,7 +43,7 @@ public final class TextDescriptionRow: Row, TextDescriptionRowModifier {
     public func textColor(
         titleLabel: UIColor = .label,
         descriptionLabel: UIColor = .secondaryLabel
-    ) -> TextDescriptionRow {
+    ) -> TitleDescriptionRow {
         self._titleTextColor = titleLabel
         self._descriptionTextColor = descriptionLabel
         return self
@@ -51,7 +51,7 @@ public final class TextDescriptionRow: Row, TextDescriptionRowModifier {
     
 }
 
-extension TextDescriptionRow {
+extension TitleDescriptionRow {
     public enum CellStyle {
         case `default`
         case subtitle

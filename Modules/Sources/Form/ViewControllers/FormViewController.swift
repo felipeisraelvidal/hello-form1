@@ -51,8 +51,9 @@ open class FormViewController: UIViewController {
     private func registerCells() {
         
         tableView.register(TextRowTableViewCell.self, forCellReuseIdentifier: TextRowTableViewCell.identifier)
-        tableView.register(TextDescriptionRowTableViewCell.self, forCellReuseIdentifier: TextDescriptionRowTableViewCell.identifier)
         tableView.register(CustomRowTableViewCell.self, forCellReuseIdentifier: CustomRowTableViewCell.identifier)
+        tableView.register(DefaultTitleDescriptionRowTableViewCell.self, forCellReuseIdentifier: DefaultTitleDescriptionRowTableViewCell.identifier)
+        tableView.register(SubtitleTitleDescriptionRowTableViewCell.self, forCellReuseIdentifier: SubtitleTitleDescriptionRowTableViewCell.identifier)
         tableView.register(TextFieldRowTableViewCell.self, forCellReuseIdentifier: TextFieldRowTableViewCell.identifier)
         tableView.register(SwitchRowTableViewCell.self, forCellReuseIdentifier: SwitchRowTableViewCell.identifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
@@ -118,6 +119,13 @@ open class FormViewController: UIViewController {
         }
     }
     
+    public func reloadData(animated flag: Bool) {
+        if flag {
+            let sections = IndexSet(integersIn: 0..<tableView.numberOfSections)
+            tableView.reloadSections(sections, with: .automatic)
+        }
+    }
+    
 }
 
 extension FormViewController: UITableViewDataSource, UITableViewDelegate {
@@ -154,14 +162,26 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
             cell.configure(with: formRow as! TextRow)
             
             return cell
-        case let formRow where formRow is TextDescriptionRow:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: TextDescriptionRowTableViewCell.identifier, for: indexPath) as? TextDescriptionRowTableViewCell else {
-                return UITableViewCell()
+        case let formRow where formRow is TitleDescriptionRow:
+            let formRow = formRow as! TitleDescriptionRow
+            switch formRow.cellStyle {
+            case .default:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: DefaultTitleDescriptionRowTableViewCell.identifier, for: indexPath) as? DefaultTitleDescriptionRowTableViewCell else {
+                    return UITableViewCell()
+                }
+                
+                cell.configure(with: formRow)
+                
+                return cell
+            case .subtitle:
+                guard let cell = tableView.dequeueReusableCell(withIdentifier: SubtitleTitleDescriptionRowTableViewCell.identifier, for: indexPath) as? SubtitleTitleDescriptionRowTableViewCell else {
+                    return UITableViewCell()
+                }
+                
+                cell.configure(with: formRow)
+                
+                return cell
             }
-            
-            cell.configure(with: formRow as! TextDescriptionRow)
-            
-            return cell
         case let formRow where formRow is CustomRow:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomRowTableViewCell.identifier, for: indexPath) as? CustomRowTableViewCell else {
                 return UITableViewCell()
@@ -201,8 +221,8 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
         switch row.self {
         case let formRow where formRow is TextRow:
             handleCellSelection(row: (formRow as! TextRow), at: indexPath)
-        case let formRow where formRow is TextDescriptionRow:
-            handleCellSelection(row: (formRow as! TextDescriptionRow), at: indexPath)
+        case let formRow where formRow is TitleDescriptionRow:
+            handleCellSelection(row: (formRow as! TitleDescriptionRow), at: indexPath)
         case let formRow where formRow is CustomRow:
             handleCellSelection(row: (formRow as! CustomRow), at: indexPath)
         case let formRow where formRow is TextFieldRow:
@@ -217,8 +237,8 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
         switch row.self {
         case let formRow where formRow is TextRow:
             handleAccessoryButtonTap(row: (formRow as! TextRow), at: indexPath)
-        case let formRow where formRow is TextDescriptionRow:
-            handleAccessoryButtonTap(row: (formRow as! TextDescriptionRow), at: indexPath)
+        case let formRow where formRow is TitleDescriptionRow:
+            handleAccessoryButtonTap(row: (formRow as! TitleDescriptionRow), at: indexPath)
         case let formRow where formRow is CustomRow:
             handleAccessoryButtonTap(row: (formRow as! CustomRow), at: indexPath)
         case let formRow where formRow is TextFieldRow:

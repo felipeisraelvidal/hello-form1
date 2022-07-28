@@ -1,6 +1,6 @@
 import UIKit
 
-class TextDescriptionRowTableViewCell: BaseTableViewCell<TextDescriptionRow> {
+class SubtitleTitleDescriptionRowTableViewCell: BaseTableViewCell<TitleDescriptionRow> {
     
     private(set) lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -18,24 +18,17 @@ class TextDescriptionRowTableViewCell: BaseTableViewCell<TextDescriptionRow> {
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
+        stackView.axis = .vertical
+        stackView.spacing = 4
+        stackView.alignment = .leading
+        stackView.distribution = .fill
         return stackView
     }()
-    
+
     // MARK: - Public methods
 
-    override func configure(with model: TextDescriptionRow) {
+    override func configure(with model: TitleDescriptionRow) {
         super.configure(with: model)
-        
-        switch model.cellStyle {
-        case .default:
-            stackView.axis = .horizontal
-            stackView.spacing = 16
-            stackView.alignment = .center
-            stackView.distribution = .fill
-        case .subtitle:
-            stackView.axis = .vertical
-            stackView.spacing = 4
-        }
         
         titleLabel.font = model._titleFont
         titleLabel.textColor = model._titleTextColor
@@ -44,7 +37,16 @@ class TextDescriptionRowTableViewCell: BaseTableViewCell<TextDescriptionRow> {
         descriptionLabel.textColor = model._descriptionTextColor
         
         titleLabel.text = model.title
-        descriptionLabel.text = model.description
+        
+        switch model.description {
+        case .left(let value):
+            descriptionLabel.text = value
+        case .right(let value):
+            value.bind { [weak self] result in
+                self?.descriptionLabel.text = result
+            }
+        }
+        
     }
     
     override func loadView() {

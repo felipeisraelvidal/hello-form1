@@ -6,6 +6,8 @@ class ViewController: FormViewController {
     
     private var text = Observable("")
     private var isPrivate = Observable(false)
+    
+    private var testString = Observable("Hello, World!")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,13 +96,13 @@ class ViewController: FormViewController {
             }
 
             FormSection(footer: text) {
-                TextDescriptionRow(title: "Title", description: text)
+                TitleDescriptionRow(title: "Title", description: .right(testString))
                     .textColor(
                         titleLabel: .systemPurple,
                         descriptionLabel: .systemBrown
                     )
                 
-                TextDescriptionRow(.subtitle, title: "Title", description: text)
+                TitleDescriptionRow(.subtitle, title: "Title", description: .left(text))
             }
             
             FormSection {
@@ -117,10 +119,12 @@ class ViewController: FormViewController {
     }
     
     func addSection() {
-        let newSection = FormSection {
-            TextRow("Testing...")
-        }
-        appendSection(newSection)
+//        let newSection = FormSection {
+//            TextRow("Testing...")
+//        }
+//        appendSection(newSection)
+        testString.value = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        reloadData(animated: true)
     }
     
     func addRow() {

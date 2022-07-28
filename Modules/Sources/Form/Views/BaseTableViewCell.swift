@@ -68,6 +68,9 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
             ])
             
             contentStackView.insertArrangedSubview(iconImageView, at: 0)
+        } else {
+            contentStackView.removeArrangedSubview(iconImageView)
+            iconImageView.removeFromSuperview()
         }
         
         if let backgroundColor = model._backgroundColor {
