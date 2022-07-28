@@ -44,6 +44,19 @@ class ViewController: FormViewController {
             }
             
             FormSection {
+                TextFieldRow("Placeholder")
+                    .setFont(.preferredFont(forTextStyle: .title2))
+                    .onSubmit { text in
+                        print(text)
+                    }
+                    .autocapitalizationType(.allCharacters)
+                    .clearButtonMode(.whileEditing)
+                    .returnKeyType(.done)
+                    .setSelectionStyle(.none)
+                    .padding(top: 16, bottom: 16)
+            }
+            
+            FormSection {
                 for item in arr {
                     TextRow(item)
                         .setAccessoryType(.detailDisclosureButton)

@@ -53,6 +53,7 @@ open class FormViewController: UIViewController {
         tableView.register(TextRowTableViewCell.self, forCellReuseIdentifier: TextRowTableViewCell.identifier)
         tableView.register(TextDescriptionRowTableViewCell.self, forCellReuseIdentifier: TextDescriptionRowTableViewCell.identifier)
         tableView.register(CustomRowTableViewCell.self, forCellReuseIdentifier: CustomRowTableViewCell.identifier)
+        tableView.register(TextFieldRowTableViewCell.self, forCellReuseIdentifier: TextFieldRowTableViewCell.identifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
     }
@@ -136,6 +137,14 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
             cell.configure(with: formRow as! CustomRow)
             
             return cell
+        case let formRow where formRow is TextFieldRow:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TextFieldRowTableViewCell.identifier, for: indexPath) as? TextFieldRowTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.configure(with: formRow as! TextFieldRow)
+            
+            return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             
@@ -155,6 +164,8 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
             handleCellSelection(row: (formRow as! TextDescriptionRow), at: indexPath)
         case let formRow where formRow is CustomRow:
             handleCellSelection(row: (formRow as! CustomRow), at: indexPath)
+        case let formRow where formRow is TextFieldRow:
+            handleCellSelection(row: (formRow as! TextFieldRow), at: indexPath)
         default:
             break
         }
@@ -169,6 +180,8 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
             handleAccessoryButtonTap(row: (formRow as! TextDescriptionRow), at: indexPath)
         case let formRow where formRow is CustomRow:
             handleAccessoryButtonTap(row: (formRow as! CustomRow), at: indexPath)
+        case let formRow where formRow is TextFieldRow:
+            handleAccessoryButtonTap(row: (formRow as! TextFieldRow), at: indexPath)
         default:
             break
         }
