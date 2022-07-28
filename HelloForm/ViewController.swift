@@ -120,7 +120,7 @@ class ViewController: FormViewController {
         let newSection = FormSection {
             TextRow("Testing...")
         }
-        insertSection(newSection, at: 1)
+        appendSection(newSection)
     }
     
     func addRow() {

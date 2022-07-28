@@ -86,6 +86,16 @@ open class FormViewController: UIViewController {
         tableView.endUpdates()
     }
     
+    public func appendSection(_ section: FormSection) {
+        let sectionIndex = sections.count
+        
+        self.sections.append(section)
+        
+        tableView.beginUpdates()
+        tableView.insertSections(IndexSet(integer: sectionIndex), with: .automatic)
+        tableView.endUpdates()
+    }
+    
     public func insertRow(_ row: FormRowBase, atSection sectionIdentifier: String, at index: Int) {
         if let setionIndex = sections.firstIndex(where: { $0.identifier == sectionIdentifier }) {
             self.sections[setionIndex].insert(row, at: index)
