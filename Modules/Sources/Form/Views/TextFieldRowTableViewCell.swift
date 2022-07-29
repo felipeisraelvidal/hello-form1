@@ -7,7 +7,6 @@ class TextFieldRowTableViewCell: BaseTableViewCell<TextFieldRow> {
     
     private lazy var textField: UITextField = {
         let textField = UITextField()
-        textField.fillSuperview(offset: 0)
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
