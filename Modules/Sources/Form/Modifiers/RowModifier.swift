@@ -11,4 +11,5 @@ public protocol FormRowModifier {
     func deselectWhenSelect(_ flag: Bool) -> Row
     func addAction(_ action: @escaping () -> Void) -> Row
     func addDetailDisclosureButtonAction(_ action: @escaping () -> Void) -> Row
+    func hideSeparators() -> Row
 }

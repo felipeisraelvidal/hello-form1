@@ -6,7 +6,9 @@ extension UILabel: DeclarativeLabel {
     
     public convenience init(_ text: String) {
         self.init(frame: .zero)
+        self.adjustsFontForContentSizeCategory = true
         self.text = text
+        self.numberOfLines = 0
     }
     
     // MARK: - Public methods

@@ -90,6 +90,10 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
         leadingConstraint?.constant = model.edgeInsets.left
         trailingConstraint?.constant = -model.edgeInsets.right
         bottomConstraint?.constant = -model.edgeInsets.bottom
+        
+        if model._isHiddenSeparator {
+            separatorInset = UIEdgeInsets(top: 0, left: 2000, bottom: 0, right: 0)
+        }
     }
     
     open func loadView() {}

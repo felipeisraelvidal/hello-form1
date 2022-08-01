@@ -12,6 +12,7 @@ public protocol FormRow: FormRowBase {
     var _accessoryType: UITableViewCell.AccessoryType { get set }
     var _selectionStyle: UITableViewCell.SelectionStyle { get set }
     var _deselectWhenSelect: Bool { get set }
+    var _isHiddenSeparator: Bool { get set }
 }
 
 public class Row: FormRow, FormRowModifier {
@@ -26,6 +27,7 @@ public class Row: FormRow, FormRowModifier {
     public var _accessoryType: UITableViewCell.AccessoryType = .none
     public var _selectionStyle: UITableViewCell.SelectionStyle = .default
     public var _deselectWhenSelect: Bool = false
+    public var _isHiddenSeparator: Bool = false
     
     // MARK: - Initializers
     
@@ -80,6 +82,12 @@ public class Row: FormRow, FormRowModifier {
     @discardableResult
     public func addDetailDisclosureButtonAction(_ action: @escaping () -> Void) -> Row {
         self.detailDisclosureButtonAction = action
+        return self
+    }
+    
+    @discardableResult
+    public func hideSeparators() -> Row {
+        self._isHiddenSeparator = true
         return self
     }
     
