@@ -63,7 +63,7 @@ class ViewController: FormViewController {
                     .selectionStyle(.none)
                     .padding(top: 16, bottom: 16)
                 
-                TextRow("Add Item")
+                TextRow(.left("Add Item"))
                     .textColor(.systemBlue)
                     .deselectWhenSelect(true)
                     .addAction { [weak self] in
@@ -73,7 +73,7 @@ class ViewController: FormViewController {
             
             FormSection("section_1") {
                 for item in arr {
-                    TextRow(item)
+                    TextRow(.left(item))
                         .accessoryType(.detailDisclosureButton)
                         .addDetailDisclosureButtonAction {
                             print("Teste")
@@ -83,15 +83,15 @@ class ViewController: FormViewController {
 
             if shouldShowExperimental {
                 FormSection(title: "Section 1", footer: "Lorem Ipsum") {
-                    TextRow(loremIpsum, image: .init(systemName: "iphone"))
+                    TextRow(.left(loremIpsum), image: .init(systemName: "iphone"))
                         .textColor(.systemRed)
                         .accessoryType(.disclosureIndicator)
                         .deselectWhenSelect(true)
                     
-                    TextRow("Row 1")
+                    TextRow(.left("Row 1"))
                         .selectionStyle(.none)
                     
-                    TextRow("Row 2")
+                    TextRow(.left("Row 1"))
                 }
             }
 
@@ -104,7 +104,7 @@ class ViewController: FormViewController {
                 
                 TitleDescriptionRow(.subtitle, title: "Title", description: .left(loremIpsum))
                 
-                TextRow("Reload First Cell")
+                TextRow(.left("Reload First Cell"))
                     .textColor(.systemBlue)
                     .deselectWhenSelect(true)
                     .addAction { [weak self] in
@@ -115,7 +115,7 @@ class ViewController: FormViewController {
             FormSection {
                 let swiftSymbol = UIImage.init(systemName: "swift")
                 
-                TextRow("Add New Section", image: swiftSymbol)
+                TextRow(.left("Add New Section"), image: swiftSymbol)
                     .textColor(.systemBlue)
                     .deselectWhenSelect(true)
                     .addAction { [weak self] in
@@ -131,14 +131,14 @@ class ViewController: FormViewController {
     
     func addSection() {
         let newSection = FormSection {
-            TextRow("Testing...")
+            TextRow(.left("Testing..."))
         }
         appendSection(newSection)
     }
     
     func addRow() {
         if text.value != "" {
-            let newTextRow = TextRow("\(isPrivate.value ? "[L] " : "")\(text.value)")
+            let newTextRow = TextRow(.left("\(isPrivate.value ? "[L] " : "")\(text.value)"))
                 .accessoryType(.detailDisclosureButton)
             
             insertRow(newTextRow, atSection: "section_1", at: 0)

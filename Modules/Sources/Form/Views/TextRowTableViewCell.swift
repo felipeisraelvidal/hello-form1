@@ -18,7 +18,15 @@ public class TextRowTableViewCell: BaseTableViewCell<TextRow> {
         titleLabel.textColor = model._textColor
         titleLabel.textAlignment = model._textAlignment
         
-        titleLabel.text = model.text
+        switch model.text {
+        case .left(let value):
+            titleLabel.text = value
+        case .right(let value):
+            value.bind { [weak self] result in
+                self?.titleLabel.text = result
+                self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
+            }
+        }
     }
     
     public override func loadView() {

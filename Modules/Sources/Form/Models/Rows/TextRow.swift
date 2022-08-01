@@ -1,14 +1,14 @@
 import UIKit
 
 public final class TextRow: Row, TextRowModifier {
-    private(set) var text: String
+    private(set) var text: Either<String, Observable<String>>
     
     private(set) var _font: UIFont = .preferredFont(forTextStyle: .body)
     private(set) var _textColor: UIColor = .label
     private(set) var _textAlignment: NSTextAlignment = .natural
     
     public init(
-        _ text: String,
+        _ text: Either<String, Observable<String>>,
         image: UIImage? = nil
     ) {
         self.text = text
