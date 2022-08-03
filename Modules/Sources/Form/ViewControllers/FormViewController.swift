@@ -34,6 +34,17 @@ open class FormViewController: UIViewController {
         setupConstraints()
     }
     
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        for selectedIndexPath in tableView.indexPathsForSelectedRows ?? [] {
+            let section = sections[selectedIndexPath.section]
+            if !section._preventDeselectionWhenViewAppear {
+                tableView.deselectRow(at: selectedIndexPath, animated: true)
+            }
+        }
+    }
+    
     // MARK: - Private methods
     
     private func setupConstraints() {

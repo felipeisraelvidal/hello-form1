@@ -75,8 +75,8 @@ class ViewController: FormViewController {
                 for item in arr {
                     TextRow(.left(item))
                         .accessoryType(.detailDisclosureButton)
-                        .addDetailDisclosureButtonAction {
-                            print("Teste")
+                        .addAction {
+                            self.showNextViewController()
                         }
                 }
             }
@@ -145,6 +145,12 @@ class ViewController: FormViewController {
             
             self.text.value = ""
         }
+    }
+    
+    func showNextViewController() {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .systemRed
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
 }
