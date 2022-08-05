@@ -1,6 +1,6 @@
 import UIKit
 
-open class FormViewController: UIViewController {
+open class FormTableViewController: UIViewController {
     
     // MARK: - Proprties
     
@@ -128,7 +128,7 @@ open class FormViewController: UIViewController {
     
 }
 
-extension FormViewController: UITableViewDataSource, UITableViewDelegate {
+extension FormTableViewController: UITableViewDataSource, UITableViewDelegate {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count

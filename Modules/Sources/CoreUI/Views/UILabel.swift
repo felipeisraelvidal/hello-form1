@@ -30,5 +30,7 @@ extension UILabel: DeclarativeLabel {
         self.textColor = color
         return self
     }
+
+    //MAYBE IMPLEMENT NEW ATTRIBUTS FOR THIS MAN
     
 }

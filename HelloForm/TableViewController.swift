@@ -2,7 +2,7 @@ import UIKit
 import Form
 import CoreUI
 
-class ViewController: FormViewController {
+class TableViewController: FormTableViewController {
     
     private var text = Observable("")
     private var isPrivate = Observable(false)
@@ -162,7 +162,7 @@ struct ViewControllerPreviews: PreviewProvider {
         typealias UIViewControllerType = UINavigationController
         
         func makeUIViewController(context: Context) -> UIViewControllerType {
-            let viewController = ViewController()
+            let viewController = TableViewController()
             
             let navigationController = UINavigationController(rootViewController: viewController)
             
