@@ -6,8 +6,11 @@ class ViewController: FormViewController {
     
     private var text = Observable("")
     private var isPrivate = Observable(false)
+    
     private var stepperValue: Observable<Double> = Observable(2)
     private var stepperValueChangeMode = Observable("No value changed")
+    
+    private var sliderValue: Observable<Float> = Observable(0)
     
     private var testString = Observable("Hello, World!")
     
@@ -48,6 +51,18 @@ class ViewController: FormViewController {
                     .fillSuperview(offset: 0)
                     .setHeight(80)
                 }
+            }
+            
+            FormSection(title: "Slider") {
+                SliderRow(value: sliderValue, in: 0...100, step: 10) {
+                    UILabel("100")
+                } minimumValueLabel: {
+                    UILabel("0")
+                }
+                .selectionStyle(.none)
+                
+                TextRow(.left("Slider value"))
+                    .selectionStyle(.none)
             }
             
             FormSection(title: "Stepper") {

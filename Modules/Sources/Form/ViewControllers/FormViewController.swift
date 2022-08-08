@@ -68,6 +68,7 @@ open class FormViewController: UIViewController {
         tableView.register(TextFieldRowTableViewCell.self, forCellReuseIdentifier: TextFieldRowTableViewCell.identifier)
         tableView.register(SwitchRowTableViewCell.self, forCellReuseIdentifier: SwitchRowTableViewCell.identifier)
         tableView.register(StepperRowTableViewCell.self, forCellReuseIdentifier: StepperRowTableViewCell.identifier)
+        tableView.register(SliderRowTableViewCell.self, forCellReuseIdentifier: SliderRowTableViewCell.identifier)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
     }
@@ -226,6 +227,14 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
             cell.configure(with: formRow as! StepperRow, atIndexPath: indexPath)
             
             return cell
+        case let formRow where formRow is SliderRow:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SliderRowTableViewCell.identifier, for: indexPath) as? SliderRowTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            cell.configure(with: formRow as! SliderRow, atIndexPath: indexPath)
+            
+            return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             
@@ -251,6 +260,8 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
             handleCellSelection(row: (formRow as! SwitchRow), at: indexPath)
         case let formRow where formRow is StepperRow:
             handleCellSelection(row: (formRow as! StepperRow), at: indexPath)
+        case let formRow where formRow is SliderRow:
+            handleCellSelection(row: (formRow as! SliderRow), at: indexPath)
         default:
             break
         }
@@ -269,6 +280,8 @@ extension FormViewController: UITableViewDataSource, UITableViewDelegate {
             handleAccessoryButtonTap(row: (formRow as! TextFieldRow), at: indexPath)
         case let formRow where formRow is SwitchRow:
             handleAccessoryButtonTap(row: (formRow as! SwitchRow), at: indexPath)
+        case let formRow where formRow is SliderRow:
+            handleAccessoryButtonTap(row: (formRow as! SliderRow), at: indexPath)
         default:
             break
         }
