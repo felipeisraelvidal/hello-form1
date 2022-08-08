@@ -6,6 +6,8 @@ class ViewController: FormViewController {
     
     private var text = Observable("")
     private var isPrivate = Observable(false)
+    private var stepperValue: Observable<Double> = Observable(2)
+    private var stepperValueChangeMode = Observable("No value changed")
     
     private var testString = Observable("Hello, World!")
     
@@ -46,6 +48,16 @@ class ViewController: FormViewController {
                     .fillSuperview(offset: 0)
                     .setHeight(80)
                 }
+            }
+            
+            FormSection(title: "Stepper") {
+                StepperRow("Stepper", value: stepperValue, in: 0...5) {
+                    self.stepperValueChangeMode.value = "Increment"
+                } onDecrement: {
+                    self.stepperValueChangeMode.value = "Decrement"
+                }
+                
+                TextRow(.right(stepperValueChangeMode))
             }
             
             FormSection(footer: "Enter your text and tap enter to add new item") {
