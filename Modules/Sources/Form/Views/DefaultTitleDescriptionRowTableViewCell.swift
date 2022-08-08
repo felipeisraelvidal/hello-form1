@@ -45,7 +45,7 @@ class DefaultTitleDescriptionRowTableViewCell: BaseTableViewCell<TitleDescriptio
         case .right(let value):
             value.bind { [weak self] result in
                 self?.descriptionLabel.text = result
-                self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
+                self?.reloadRow()
             }
         }
         

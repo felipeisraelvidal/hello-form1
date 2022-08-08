@@ -24,7 +24,7 @@ public class TextRowTableViewCell: BaseTableViewCell<TextRow> {
         case .right(let value):
             value.bind { [weak self] result in
                 self?.titleLabel.text = result
-                self?.tableView?.reloadRows(at: [indexPath], with: .automatic)
+                self?.reloadRow()
             }
         }
     }

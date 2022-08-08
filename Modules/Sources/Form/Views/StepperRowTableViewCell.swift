@@ -37,6 +37,10 @@ class StepperRowTableViewCell: BaseTableViewCell<StepperRow> {
         stepper.maximumValue = model.bounds.upperBound
         stepper.stepValue = model.step
         stepper.value = model.value.value
+        
+        model.value.bind { [weak self] result in
+            self?.stepper.value = result
+        }
     }
     
     override func loadView() {

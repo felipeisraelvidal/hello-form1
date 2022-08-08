@@ -97,5 +97,11 @@ public class BaseTableViewCell<T: FormRow>: UITableViewCell {
     }
     
     open func loadView() {}
+    
+    func reloadRow() {
+        if let indexPath = indexPath {
+            self.tableView?.reloadRows(at: [indexPath], with: model?._reloadRowAnimation ?? .automatic)
+        }
+    }
 
 }

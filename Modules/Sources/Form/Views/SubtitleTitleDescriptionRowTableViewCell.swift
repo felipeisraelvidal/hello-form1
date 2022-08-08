@@ -44,6 +44,7 @@ class SubtitleTitleDescriptionRowTableViewCell: BaseTableViewCell<TitleDescripti
         case .right(let value):
             value.bind { [weak self] result in
                 self?.descriptionLabel.text = result
+                self?.reloadRow()
             }
         }
         

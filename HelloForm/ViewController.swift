@@ -58,6 +58,14 @@ class ViewController: FormViewController {
                 }
                 
                 TextRow(.right(stepperValueChangeMode))
+                    .reloadRowAnimation(.none)
+                
+                TextRow(.left("Set Minimum Value"))
+                    .textColor(.systemBlue)
+                    .addAction {
+                        self.stepperValue.value = 0
+                    }
+                    .deselectWhenSelect(true)
             }
             
             FormSection(footer: "Enter your text and tap enter to add new item") {

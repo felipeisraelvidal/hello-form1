@@ -13,6 +13,7 @@ public protocol FormRow: FormRowBase {
     var _selectionStyle: UITableViewCell.SelectionStyle { get set }
     var _deselectWhenSelect: Bool { get set }
     var _isHiddenSeparator: Bool { get set }
+    var _reloadRowAnimation: UITableView.RowAnimation { get set }
 }
 
 public class Row: FormRow, FormRowModifier {
@@ -28,6 +29,7 @@ public class Row: FormRow, FormRowModifier {
     public var _selectionStyle: UITableViewCell.SelectionStyle = .default
     public var _deselectWhenSelect: Bool = false
     public var _isHiddenSeparator: Bool = false
+    public var _reloadRowAnimation: UITableView.RowAnimation = .automatic
     
     // MARK: - Initializers
     
@@ -88,6 +90,12 @@ public class Row: FormRow, FormRowModifier {
     @discardableResult
     public func hideSeparators() -> Row {
         self._isHiddenSeparator = true
+        return self
+    }
+    
+    @discardableResult
+    public func reloadRowAnimation(_ animation: UITableView.RowAnimation) -> Row {
+        self._reloadRowAnimation = animation
         return self
     }
     
