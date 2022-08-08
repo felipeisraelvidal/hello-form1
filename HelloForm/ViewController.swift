@@ -63,6 +63,13 @@ class ViewController: FormViewController {
                 
                 TextRow(.left("Slider value"))
                     .selectionStyle(.none)
+                
+                TextRow(.left("Set custom value"))
+                    .textColor(.systemBlue)
+                    .addAction { [weak self] in
+                        self?.sliderValue.value = Float.random(in: 0...100)
+                    }
+                    .deselectWhenSelect(true)
             }
             
             FormSection(title: "Stepper") {
@@ -77,8 +84,8 @@ class ViewController: FormViewController {
                 
                 TextRow(.left("Set Minimum Value"))
                     .textColor(.systemBlue)
-                    .addAction {
-                        self.stepperValue.value = 0
+                    .addAction { [weak self] in
+                        self?.stepperValue.value = 0
                     }
                     .deselectWhenSelect(true)
             }
